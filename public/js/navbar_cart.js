@@ -11,7 +11,7 @@ function renderToCart(){
         
         const imgNoCart = document.createElement('img')
         imgNoCart.classList.add('no-item-img')
-        imgNoCart.setAttribute('src', '../public/assets/navbar/no_cart.png')
+        imgNoCart.setAttribute('src', './public/assets/navbar/no_cart.png')
 
         divNoCart.appendChild(imgNoCart)
         contentCart.appendChild(divNoCart)
