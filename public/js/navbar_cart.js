@@ -22,9 +22,9 @@ function renderToCart(){
             let src_film
           
             if (item['type_film'] == 'chiếu rạp') {
-              src_film = '../public/assets/img/movie/' + item['pic']
+              src_film = './public/assets/img/movie/' + item['pic']
             } else {
-              src_film = '../public/assets/img/cartoon/' + item['pic']
+              src_film = './public/assets/img/cartoon/' + item['pic']
             }
           
             const cartItem = document.createElement('a')
@@ -85,5 +85,3 @@ function removeItemFromCart(element){
         }
     })
 }
-
-// lắng nghe sự kiện click vào item
