@@ -35,7 +35,7 @@ FILM.slice(startId-1,endId-1).forEach(element => {
     `<div class="col ${classCol} m-4 c-1 product-item-box">
         <div class="product-item">
             <i data-id="${id_film}" class="fa-solid item__icon ${classIcon}"></i>
-            <a href="../pages/product_detail.html?id=${id_film}">
+            <a href="pages/product_detail.html?id=${id_film}">
                 <img src="${src_film}" alt="" class="product-item-pic">
             </a>
             <div class="product-item-name">

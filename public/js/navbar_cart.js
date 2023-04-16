@@ -31,7 +31,7 @@ function renderToCart(){
             cartItem.setAttribute('data-id', id_film)
             cartItem.style.backgroundImage = `url(${src_film})`
             cartItem.classList.add('cart__item')
-            cartItem.setAttribute('href', `../pages/product_detail.html?id=${id_film}`)
+            cartItem.setAttribute('href', `pages/product_detail.html?id=${id_film}`)
           
             const img = document.createElement('img')
             img.setAttribute('src', src_film)
