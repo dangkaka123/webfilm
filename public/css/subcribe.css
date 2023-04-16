@@ -1,0 +1,36 @@
+.subcribe{
+    background-color: #e57207;
+    padding: 35px 0;
+}
+.subcribe_content > *{
+    text-align: center;
+}
+.subcribe_content-title{
+    font-size: 1.2em;
+    font-weight: 500;
+    color: white;
+}
+.subcribe_content-context{
+    color: white;
+}
+.subcribe_form-input{
+    width: 100%;
+    font-size:  20px;
+    height: 38px;
+    outline: yellow;
+    border: 2px gold solid;
+    border-radius: 3%;
+}
+.subcribe_form{
+    position: relative;
+}
+.subcribe_form-submit{
+    position: absolute;
+    top:0;
+    right: 0;
+    font-weight: 600;
+    color: gold;
+    background-color: #211a1a;
+    border-radius: 6%;
+    padding: 10px;
+}

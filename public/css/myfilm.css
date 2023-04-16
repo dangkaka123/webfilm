@@ -1,0 +1,8 @@
+.my_film-title{
+    font-weight: 600;
+    font-size: 30px;
+    margin-top: 20px;
+    color: white;
+    padding-left: 10px;
+    border-left: 5px solid orangered;
+}

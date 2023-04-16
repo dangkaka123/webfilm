@@ -1,0 +1,35 @@
+.download{
+    background-color: #1f1e24;
+    padding: 20px 0;
+}
+.download_qr-img{
+    width: 50%;
+    margin: 0px auto;
+}
+.download__qr{
+    position: relative;
+}
+.download__content{
+    margin-top: 20px;
+}
+.download__qr_note{
+    color: white;
+    text-align: center;
+    position: absolute;
+    left: 70px;
+    top: 90%;
+}
+.download__content-title{
+    color: white;
+    font-size: 1.2em;
+}
+.download__content-context{
+    color: rgb(190, 149, 149);
+    margin-top: 10px;
+    border-bottom: 1px solid gold;
+    padding-bottom: 10px;
+}
+.download__appstore,.download__chplay{
+    width: 50px;
+    margin-top: 10px;
+}
