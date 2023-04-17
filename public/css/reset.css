@@ -16,15 +16,7 @@
 
 html {
   font-family: 'Montserrat', sans-serif;
-}
-
-.main {
-  min-height: 100vh;
-  margin-top: 112px;
-  overflow: hidden;
-  background: url('https://codewithsadee.github.io/filmlane/assets/images/upcoming-bg.png') no-repeat ;
-  background-position: center;
-  background-size: cover;
+  scroll-behavior: smooth;
 }
 
 a{

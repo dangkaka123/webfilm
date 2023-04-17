@@ -11,9 +11,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="public/css/reset.css" type="text/css">
     <link rel="stylesheet" href="public/css/grid.css" type="text/css">
-    <link rel="stylesheet" href="public/css/main.css" type="text/css">
     <link rel="stylesheet" href="public/css/header.css" type="text/css">
     <link rel="stylesheet" href="public/css/navbar.css" type="text/css">
+    <link rel="stylesheet" href="public/css/main.css" type="text/css">
     <link rel="stylesheet" href="public/css/slider.css" type="text/css">
     <link rel="stylesheet" href="public/css/product_list.css" type="text/css">
     <link rel="stylesheet" href="public/css/page_device.css" type="text/css">
@@ -85,8 +85,6 @@
                                     <i class="fa-solid fa-trash"></i>
                                 </div>
                             </div> -->
-
-
 
                         </div>
                         <div class="footer__cart">
@@ -204,7 +202,7 @@
         <!-- end product-list -->
 
         <!-- start page device Khanh -->
-            <div class="page_device">
+            <div class="page_device ">
                 <span class="page_device_box_pre">Trước</span>
                 <div class=" page_device_box">
                     <!-- 
@@ -216,38 +214,32 @@
         <!-- end page device -->
 
         <!-- start download K.Cuong -->
-        <div class="grid container">
-            <div class="row download">
-                <div class="col l-2"></div>
-                <div class="col l-4 download__qr">
+        <div class=" download__box">
+                <div class=" download__qr">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/1200px-QR_code_for_mobile_English_Wikipedia.svg.png" alt="" class="download_qr-img">
-                    <div class="download__qr_note">Quét QR để tải</div>
+                    <div class="download__qr_note">Scan me <i class="fa-solid fa-download"></i></div>
                 </div>
-                <div class="col l-1"></div>
-                <div class="col l-3 download__content">
+                <div class=" download__content">
                     <div class="download__content-title">Trải Nghiệm Ứng Dụng Trên Điện Thoại</div>
                     <div class="download__content-context">Tải ứng dụng về điện thoại để trải nghiệm chất lượng dịch vụ của tôi tốt hơn. Cảm ơn các bạn đã cùng đồng hành</div>
-                    <img src="https://www.apple.com/v/app-store/b/images/overview/icon_appstore__ev0z770zyxoy_large_2x.png" alt="" class="download__appstore">
-                    <img src="https://bizweb.dktcdn.net/100/420/160/products/4185627-app-bo-chuyen-doi-tieng-viet-app-2-300x300.png?v=1623045430233" alt="" class="download__chplay">
+                    <div class="download__app">
+                        <img src="./public/assets/main/ch-play.png" alt="" class="download__chplay">
+                        <img src="./public/assets/main/app-store.png" alt="" class="download__appstore">
+                        <p class="download__note">Thanks for download!</p>
+                    </div>
                 </div>
-                <div class="col l-2"></div>
-            </div>
         </div>
         <!-- end download -->
 
         <!-- start subcribe K.Cuong  -->
-        <div class="grid container">
-            <div class="row subcribe">
-                <div class="col l-2"></div>
-                <div class="col l-3 subcribe_content">
-                    <div class="subcribe_content-title">Dùng thử gói năng cấp miễn phí trong 30 ngày</div>
-                    <div class="subcribe_content-context">Nhập email để bắt đầu dùng thử</div>
-                </div>
-                <div class="col l-2"></div>
-                <div class="col l-3 subcribe_form">
-                    <input type="text" class="subcribe_form-input" placeholder="Enter your email">
-                    <div class="subcribe_form-submit">GET STARTED</div>
-                </div>
+        <div class="subcribe">
+            <div class="subcribe_content">
+                <div class="subcribe_content-title">Dùng thử gói năng cấp miễn phí trong 30 ngày</div>
+                <div class="subcribe_content-context">Nhập email để bắt đầu dùng thử</div>
+            </div>
+            <div class=" subcribe_form">
+                <input type="text" class="subcribe_form-input" placeholder="Nhập email của bạn">
+                <div class="subcribe_form-submit">Bắt đầu</div>
             </div>
         </div>
         <!-- end subcribe -->
@@ -255,61 +247,62 @@
     <!-- End main -->
     
 
-    <!-- start footer Hai Dang -->
     <footer class="footer grid">
         <!-- start footer top -->
         <section class="footer-top row">
             <div class="col l-0-5 m-0-5 c-0-5"></div>
-            <nav class=" col l-11 m-11 c-11 navbar row">
-                <div class="col l-1 m-1 c-1 navbar__logo-wrapper">
-                    <a class="navbar__logo" href="index.html">
-                        <img src="public/assets/navbar/logo_navbar.svg" alt="logo nav" class="navbar__logo-img">
-                    </a>
-                </div>
+            <nav class=" col l-11 m-11 c-11 navbar">
+                <div class="container row">
+                    <div class="col l-1 m-1 c-1 navbar__logo-wrapper">
+                        <a class="navbar__logo" href="../index.html">
+                            <img src="../public/assets/navbar/logo_navbar.svg" alt="logo nav" class="navbar__logo-img">
+                        </a>
+                    </div>
     
-                <div class="col l-o-4 l-7 m-o-4 m-7 c-o-4 c-7 navbar__main-pages-wrapper">
-                    <div class="col l-3 m-3 c-3 navbar__main-pages">
-                        <a href="index.html" class="navbar__main-pages-link">Trang chủ</a>
-                    </div>
+                    <div class="col l-o-4 l-7 m-o-4 m-7 c-o-4 c-7 navbar__main-pages-wrapper">
+                        <div class="col l-3 m-3 c-3 navbar__main-pages">
+                            <a href="../index.html" class="navbar__main-pages-link">Trang chủ</a>
+                        </div>
         
-                    <div class="col l-3 m-3 c-3 navbar__main-pages">
-                        <a href="pages/phimchieurap.html" class="navbar__main-pages-link">Phim chiếu rạp</a>
-                    </div>
+                        <div class="col l-3 m-3 c-3 navbar__main-pages">
+                            <a href="phimchieurap.html" class="navbar__main-pages-link">Phim chiếu rạp</a>
+                        </div>
         
-                    <div class="col l-3 m-3 c-3 navbar__main-pages">
-                        <a href="pages/hoathinh.html" class="navbar__main-pages-link">Phim hoạt hình</a>
-                    </div>
+                        <div class="col l-3 m-3 c-3 navbar__main-pages">
+                            <a href="hoathinh.html" class="navbar__main-pages-link">Phim hoạt hình</a>
+                        </div>
         
-                    <div class="col l-3 m-3 c-3 navbar__main-pages">
-                        <a href="pages/myfilm.html" class="navbar__main-pages-link">Phim của tôi</a>
+                        <div class="col l-3 m-3 c-3 navbar__main-pages">
+                            <a href="myfilm.html" class="navbar__main-pages-link">Phim của tôi</a>
+                        </div>
                     </div>
-                </div>
     
-                <div class="col l-12 m-12 c-12 divider"></div>
+                    <div class="col l-12 m-12 c-12 divider"></div>
 
-                <div class=" col l-3 m-3 c-3 navbar__quicklink-wrapper">
-                    <a href="#" class=" quicklink__link">Faq</a>
-                    <a href="#" class=" quicklink__link">Help center</a>
-                    <a href="#" class=" quicklink__link">Terms of use</a>
-                    <a href="#" class=" quicklink__link">Privacy</a>
-                </div>
+                    <div class=" col l-3 m-3 c-3 navbar__quicklink-wrapper">
+                            <a href="#" class=" quicklink__link">Faq</a>
+                            <a href="#" class=" quicklink__link">Help center</a>
+                            <a href="#" class=" quicklink__link">Terms of use</a>
+                            <a href="#" class=" quicklink__link">Privacy</a>
+                    </div>
 
-                <div class="col l-o-7 l-2 m-o-7 m-2 c-o-7 c-2 navbar__social-link-wrapper">
-                    <a href="" class="social-link__link">
-                        <i class="fa-brands fa-facebook"></i>
-                    </a>
+                    <div class="col l-o-7 l-2 m-o-7 m-2 c-o-7 c-2 navbar__social-link-wrapper">
+                            <a href="" class="social-link__link">
+                                <i class="fa-brands fa-facebook"></i>
+                            </a>
     
-                    <a href="" class="social-link__link">
-                        <i class="fa-brands fa-twitter"></i>
-                    </a>
+                            <a href="" class="social-link__link">
+                                <i class="fa-brands fa-twitter"></i>
+                            </a>
     
-                    <a href="" class="social-link__link">
-                        <i class="fa-brands fa-pinterest"></i>
-                    </a>
+                            <a href="" class="social-link__link">
+                                <i class="fa-brands fa-pinterest"></i>
+                            </a>
     
-                    <a href="" class="social-link__link">
-                        <i class="fa-brands fa-linkedin"></i>
-                    </a>
+                            <a href="" class="social-link__link">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </a>
+                    </div>
                 </div>
             </nav>
             <div class="col l-0-5 m-0-5 c-0-5"></div>

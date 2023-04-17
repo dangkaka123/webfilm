@@ -1,35 +1,66 @@
-.download{
-    background-color: #1f1e24;
-    padding: 20px 0;
+
+.download__box{
+    width: 100%;
+    padding: 40px 0;
+    background-image: url('../assets/main/service-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: space-around;
 }
+
+
 .download_qr-img{
-    width: 50%;
-    margin: 0px auto;
+    width: 100%;
+    border: 20px solid var(--primary-color);
+    background-color: var(--white-color);
 }
 .download__qr{
+    width: 300px;
     position: relative;
-}
-.download__content{
-    margin-top: 20px;
 }
 .download__qr_note{
     color: white;
     text-align: center;
     position: absolute;
-    left: 70px;
-    top: 90%;
+    right: 0;
+    bottom: 4px;
+    writing-mode: vertical-lr;
+    text-transform: uppercase;
+    background-color: var(--primary-color);
+    padding: 25px;
+    font-size: 12px;
+    color: var(--black-color);
+    transform: translateX(120%);
 }
+
+.download__content{
+    width: 300px;
+}
+
 .download__content-title{
-    color: white;
-    font-size: 1.2em;
+    color: var(--primary-color);
+    font-size: 22px;
 }
 .download__content-context{
-    color: rgb(190, 149, 149);
+    color: var(--white-color);
     margin-top: 10px;
     border-bottom: 1px solid gold;
     padding-bottom: 10px;
 }
+
+.download__app{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
 .download__appstore,.download__chplay{
     width: 50px;
     margin-top: 10px;
+}
+
+.download__note{
+    color: var(--primary-color);
+    font-size: 13px;
 }

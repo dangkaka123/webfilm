@@ -1,68 +1,75 @@
+// Xuất nội dung main
 const params = new URLSearchParams(window.location.search);
 const id_film = parseInt(params.get('id'))-1
 const film = FILM[id_film]
 const itemInStorage = JSON.parse(localStorage.getItem('cart')) || []
 let classIcon = 'fa-plus item__icon--add'
 const index = itemInStorage.findIndex((e) => e.id === film.id);
-console.log(index)
 if( index !== -1){
     classIcon = 'fa-minus item__icon--remove'
 }
 
+let src_film
 if (film['type_film']=='chiếu rạp'){
     src_film = '../public/assets/img/movie/'+film['pic']
 } else {
     src_film = '../public/assets/img/cartoon/'+film['pic']
 }
 
-const detailFilm = document.querySelector('.detail_film')
+const detailFilm = document.querySelector('.detail_film-box')
+detailFilm.style.backgroundImage = `url('${src_film}')`
 
 const innderDetailFilm = `
-    <div class="col l-3 detail_film_img_box ">
-    <img src="${src_film}" alt="" class="detail_film_img">
-    </div>
+    <div class="grid wide" >
+        <div class="row detail_film">
 
-    <div class="col l-9 detail_film_info_box">
-        <div class="detail_film_info_box--title">${film.name}</div>
+            <div class="col l-3 detail_film_img_box ">
+            <img src="${src_film}" alt="" class="detail_film_img">
+            </div>
 
-        <div class="detail_film_info_box--text">
-            <div class="info--title">  Đạo diễn: </div>
-            <div class="info--subtitle">${film.director}</div>
-        </div>
-        <div class="detail_film_info_box--text">
-            <div class="info--title"> Diễn viên: </div>
-            <div class="info--subtitle">${film.main_charactor}</div>
-        </div>
-        <div class="detail_film_info_box--text">
-            <div class="info--title"> Mô tả: </div>
-            <div class="info--subtitle">${film.describe}</div>
-        </div>
-        <div class="detail_film_info_box--text">
-            <div class="info--title"> Thời gian:  </div>
-            <div class="info--subtitle">${film.time}</div>
-        </div>
-        <div class="detail_film_info_box--text">
-            <div class="info-text info--title"> Đánh giá:  </div>
-            <div class="info--subtitle">${film.rating} <i class="fa-solid fa-star"></i> </div>
-        </div>
+            <div class="col l-9 detail_film_info_box">
+                <div class="detail_film_info_box--title">${film.name}</div>
 
-        <div class="detail_film_info_box--check">
-            <a href="#video_iframe" class="detail_film_info_box--check-watchnow">
-                <i class="fa-solid fa-play watchnow-icon"></i>
-                <span class="watchnow-text">Watch Now</span> 
-            </a>
-            <i data-id="${film.id}" class="fa-solid item__icon ${classIcon}"></i>
-        </div>
-    </div>
+                <div class="detail_film_info_box--text">
+                    <div class="info--title">  Đạo diễn: </div>
+                    <div class="info--subtitle">${film.director}</div>
+                </div>
+                <div class="detail_film_info_box--text">
+                    <div class="info--title"> Diễn viên: </div>
+                    <div class="info--subtitle">${film.main_charactor}</div>
+                </div>
+                <div class="detail_film_info_box--text">
+                    <div class="info--title"> Mô tả: </div>
+                    <div class="info--subtitle">${film.describe}</div>
+                </div>
+                <div class="detail_film_info_box--text">
+                    <div class="info--title"> Thời gian:  </div>
+                    <div class="info--subtitle">${film.time}</div>
+                </div>
+                <div class="detail_film_info_box--text">
+                    <div class="info-text info--title"> Đánh giá:  </div>
+                    <div class="info--subtitle">${film.rating} <i class="fa-solid fa-star"></i> </div>
+                </div>
 
-    <div class="col l-12 detail_film-video">
-        <iframe id="video_iframe" src="${film.src}" allowfullscreen frameborder="0" width="1200" height="600" >
-        </iframe>                    
+                <div class="detail_film_info_box--check">
+                    <a href="#video_iframe" class="detail_film_info_box--check-watchnow">
+                        <i class="fa-solid fa-play watchnow-icon"></i>
+                        <span class="watchnow-text">Watch Now</span> 
+                    </a>
+                    <i data-id="${film.id}" class="fa-solid item__icon ${classIcon}"></i>
+                </div>
+            </div>
+
+            <div class="col l-12 detail_film-video">
+                <iframe id="video_iframe" src="${film.src}" allowfullscreen frameborder="0" width="1200" height="600" >
+                </iframe>                    
+            </div>
+        </div>
     </div>
 `
 detailFilm.innerHTML = innderDetailFilm
 
-////////////////
+//////////////// Thao tác thêm xóa
 const iconActions = document.querySelectorAll(".item__icon")
 
 

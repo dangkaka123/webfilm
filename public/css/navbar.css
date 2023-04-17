@@ -4,10 +4,6 @@
     align-items: center;
 }
 
-.navbar__logo-wrapper{
-    margin: auto; 
-}
-
 .navbar__logo{
     margin: auto;
     display: block;
@@ -292,9 +288,15 @@
     text-align: center;
     line-height: 40px;
     color: #fff;
-    background-color: #09090a;
+    background-color: #11141d;
     border-radius: 50%;
 }
+
+.social-link__link:hover,
+.quicklink__link:hover {
+    color: var(--primary-color);
+}
+
 
 .navbar__social-link-wrapper{
     display: flex;

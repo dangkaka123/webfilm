@@ -1,18 +1,10 @@
-.container{
+.main {
     width: 100%;
-    margin: auto;
-    font-size: 16px;
-}
-
-.margin{
-    margin: 20px auto !important;
-}
-
-.paddingmodel {
-    padding: 50px  !important;
-}
-
-body{
-    background-color: #141219;
-}
+    min-height: 100vh;
+    margin-top: 112px;
+    background: url('https://codewithsadee.github.io/filmlane/assets/images/upcoming-bg.png') no-repeat ;
+    background-position: center;
+    background-size: cover;
+  }
+  
 

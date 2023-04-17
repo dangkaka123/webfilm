@@ -1,17 +1,26 @@
+
+/* .footer{
+    overflow: hidden;
+} */
+
 .footer-top {
-    margin: 10px 0;
+    width: 100%;
+    padding: 10px 0;
+    background-image: url('../assets/footer/footer-bg.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .divider {
     margin: 10px 0;
     height: 4px;
-    border-top: 1px solid #e8eaf0;
-    border-bottom: 1px solid rgba( 255, 255, 255, 0.1);
+    border-top: 1px solid #10131c;
+    border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
 }
 
 
 .footer-bottom{
-    background-color: #000;
+    background-color:#11141d;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,5 +29,5 @@
 
 .coppy-right{
     font-size: 14px;
-    color: #fff;
+    color: var(--primary-color);
 }

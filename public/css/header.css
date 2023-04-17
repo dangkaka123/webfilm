@@ -1,9 +1,9 @@
 .header{
-    background-color: var(--black-light-color);
+    background-color: #171d21;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 3;
-    height: 112px;
+    height: 114px;
 }

@@ -1,36 +1,60 @@
+
 .subcribe{
-    background-color: #e57207;
+    background-image: url('../assets/main/cta-bg.jpg');
     padding: 35px 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
+
+.subcribe_content{
+    width: 500px;
+}
+
 .subcribe_content > *{
+    color: var(--black-color);
     text-align: center;
 }
+
 .subcribe_content-title{
-    font-size: 1.2em;
-    font-weight: 500;
-    color: white;
+    font-size: 24px;
+    font-weight: 600;
 }
 .subcribe_content-context{
-    color: white;
+    font-size: 16px;
 }
-.subcribe_form-input{
-    width: 100%;
-    font-size:  20px;
-    height: 38px;
-    outline: yellow;
-    border: 2px gold solid;
-    border-radius: 3%;
-}
+
 .subcribe_form{
     position: relative;
 }
+.subcribe_form-input{
+    width: 500px;
+    padding: 18px 32px;
+    font-size: 16px;
+    border: none;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
 .subcribe_form-submit{
     position: absolute;
-    top:0;
-    right: 0;
+    top: 2px;
+    bottom: 2px;
+    right: 2px;
+    width: 30%;
     font-weight: 600;
-    color: gold;
+    color: var(--primary-color);
     background-color: #211a1a;
-    border-radius: 6%;
-    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.subcribe_form-submit:hover{
+    border: 1px solid #211a1a;
+    background-color: var(--primary-color);
+    color: #211a1a
 }
