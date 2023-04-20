@@ -9,15 +9,20 @@ let pageRow = 2
 let classCol = 'l-'+ (12/pageCol).toString().replace(".", "-")
 
 // Tải lại trang nếu kích thước thay đổi
+let lastWidth = window.innerWidth;
+
 window.addEventListener('resize',  () => {
-    if(window.innerWidth < 740 && classCol !=  'c-'+ (12/pageCol).toString().replace(".", "-")){
-        window.location.reload()
-    }
-    if(window.innerWidth < 1024 && classCol != 'm-'+ (12/pageCol).toString().replace(".", "-")){
-        window.location.reload()
-    }
-    if(window.innerWidth >= 1024 && classCol != 'l-'+ (12/pageCol).toString().replace(".", "-")){
-        window.location.reload()
+    if (window.innerWidth !== lastWidth) {
+        if(window.innerWidth < 740 && classCol !==  'c-'+ (12/pageCol).toString().replace(".", "-")){
+            window.location.reload()
+        }
+        if(window.innerWidth < 1024 && classCol !== 'm-'+ (12/pageCol).toString().replace(".", "-")){
+            window.location.reload()
+        }
+        if(window.innerWidth >= 1024 && classCol !== 'l-'+ (12/pageCol).toString().replace(".", "-")){
+            window.location.reload()
+        }
+        lastWidth = window.innerWidth;
     }
 })
 
