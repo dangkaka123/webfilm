@@ -1,12 +1,48 @@
-// Tải film vào box
+// Lấy trang hiện tại từ query params
 const params = new URLSearchParams(window.location.search)
 const page = params.get('page') || 1
+
+/////// Cập nhật item film tại product list
+// Khởi tạo cột, hàng và class mặc định cho item
 let pageCol = 4
 let pageRow = 2
+let classCol = 'l-'+ (12/pageCol).toString().replace(".", "-")
+
+// Tải lại trang nếu kích thước thay đổi
+window.addEventListener('resize',  () => {
+    if(window.innerWidth < 740 && classCol !=  'c-'+ (12/pageCol).toString().replace(".", "-")){
+        window.location.reload()
+    }
+    if(window.innerWidth < 1024 && classCol != 'm-'+ (12/pageCol).toString().replace(".", "-")){
+        window.location.reload()
+    }
+    if(window.innerWidth >= 1024 && classCol != 'l-'+ (12/pageCol).toString().replace(".", "-")){
+        window.location.reload()
+    }
+})
+
+// Các cột, hàng và class sẽ thay đổi theo kích thước màn hình
+if(window.innerWidth < 740){
+    pageCol = 2
+    pageRow = 3
+    classCol = 'c-'+ (12/pageCol).toString().replace(".", "-")
+} else if(window.innerWidth >= 740 && window.innerWidth  < 1024){
+    pageCol = 3
+    pageRow = 3
+    classCol = 'm-'+ (12/pageCol).toString().replace(".", "-")
+} else if(window.innerWidth >= 1024) {
+    pageCol = 4
+    pageRow = 2
+    classCol = 'l-'+ (12/pageCol).toString().replace(".", "-")
+}
+
+// Tính số lượng item sẽ xuất hiện tại product list
 const numberItem = pageCol*pageRow
-let classCol = 'l-'+ (12/pageCol).toString().replace(".", "-");
+let startId = (page - 1)*numberItem + 1
+let endId = startId + numberItem
 const itemInStorage = JSON.parse(localStorage.getItem('cart')) || []
 let pageSize = Math.ceil(itemInStorage.length/numberItem) 
+
 renderToMyFilm(itemInStorage)
 
 function renderToMyFilm(items){
@@ -33,21 +69,21 @@ function renderToMyFilm(items){
         }
     
         all_product += 
-        `<div class="col ${classCol} m-4 c-1 product-item-box">
+        `<div class="col ${classCol} product-item-box">
             <div class="product-item">
                 <i data-id="${id_film}" class="fa-solid item__icon ${classIcon}"></i>
-                <a href="../pages/product_detail.html?id=${id_film}">
+                <a href="./product_detail.html?id=${id_film}">
                     <img src="${src_film}" alt="" class="product-item-pic">
                 </a>
                 <div class="product-item-name">
                     <span class="name_film">${name_film}</span>
-                    <span class="year_film">${year_film}</span>
+                    <span class="year_film ">${year_film}</span>
                 </div>
-                <div class="product-item-info">
+                <div class="product-item-info ">
                     <span class="quanlity-film">HD</span>
                     <span class="longtime-film--star-film">
-                            <span class="material-symbols-outlined material-symbols-outlined--clock_loader_20">clock_loader_20</span>
-                            <span class="longtime-film">${time_film}</span>
+                            <span class="material-symbols-outlined material-symbols-outlined--clock_loader_20 hidden-on-mobile-tablet">clock_loader_20</span>
+                            <span class="longtime-film hidden-on-mobile-tablet">${time_film}</span>
                             <span class="material-symbols-outlined material-symbols-outlined--star">star</span>
                             <span class="star-film">${rate_film}</span>
                     </span>

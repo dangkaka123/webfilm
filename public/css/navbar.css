@@ -1,5 +1,6 @@
 
 .navbar {
+    width: 100%;
     display: flex;
     align-items: center;
 }
@@ -10,7 +11,7 @@
 }
 
 .navbar__logo-img{
-    width: 80%;
+    width: 100px;
 }
 
 .navbar__main-pages{
@@ -77,6 +78,11 @@
     color: var(--primary-color);
 }
 
+.navbar__action{
+    display: flex;
+    justify-content: space-around;
+}
+
 .navbar__avatar-icon,
 .navbar__cart-icon{
     color: white;
@@ -102,14 +108,14 @@
 }
 
 
-.navbar__cart{
+.navbar__cart-box{
     position: relative;
 }
 
 .navbar__cart-info{
     position: absolute;
     top: 60px;
-    right: 0;
+    right: -5px;
     background-color: var(--primary-color);
     width: 500px;
     z-index: 1;
@@ -249,6 +255,69 @@
     font-weight: 600;
     color: #000;
 }
+
+.navbar__menu-tablet-mobile{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar__menu-icon{
+    font-size: 24px;
+    color: var(--white-color);
+    cursor: pointer;
+    padding: 10px;
+}
+
+
+.navbar__menu-exit:hover,
+.navbar__menu-icon:hover{
+    color: var(--primary-color);
+}
+
+.navbar__menu-content-wrapper{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: block;
+}
+
+.menu--hidden{
+    display: none;
+}
+
+.navbar__menu-exit{
+    font-size: 28px;
+    padding: 25px;
+    color: var(--white-color);
+    cursor: pointer;
+
+}
+
+.navbar__menu-content{
+    position: fixed;
+    background-color: #171d21;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar__menu-content .navbar__main-pages{
+    padding: 15px 0;
+    font-size: 20px;
+    width: 100%;
+}
+
+.navbar__main-pages-icon{
+    padding: 10px;
+}
+
 
 @keyframes cartAnimation {
     from{

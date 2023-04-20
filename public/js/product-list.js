@@ -1,8 +1,42 @@
+// Lấy trang hiện tại từ query params
 const params = new URLSearchParams(window.location.search)
 const page = params.get('page') || 1
+
+/////// Cập nhật item film tại product list
+// Khởi tạo cột, hàng và class mặc định cho item
 let pageCol = 4
 let pageRow = 3
-let classCol = 'l-'+ (12/pageCol).toString().replace(".", "-");
+let classCol = 'l-'+ (12/pageCol).toString().replace(".", "-")
+
+// Tải lại trang nếu kích thước thay đổi
+window.addEventListener('resize',  () => {
+    if(window.innerWidth < 740 && classCol !=  'c-'+ (12/pageCol).toString().replace(".", "-")){
+        window.location.reload()
+    }
+    if(window.innerWidth < 1024 && classCol != 'm-'+ (12/pageCol).toString().replace(".", "-")){
+        window.location.reload()
+    }
+    if(window.innerWidth >= 1024 && classCol != 'l-'+ (12/pageCol).toString().replace(".", "-")){
+        window.location.reload()
+    }
+})
+
+// Các cột, hàng và class sẽ thay đổi theo kích thước màn hình
+if(window.innerWidth < 740){
+    pageCol = 2
+    pageRow = 5
+    classCol = 'c-'+ (12/pageCol).toString().replace(".", "-")
+} else if(window.innerWidth >= 740 && window.innerWidth  < 1024){
+    pageCol = 3
+    pageRow = 4
+    classCol = 'm-'+ (12/pageCol).toString().replace(".", "-")
+} else if(window.innerWidth >= 1024) {
+    pageCol = 4
+    pageRow = 3
+    classCol = 'l-'+ (12/pageCol).toString().replace(".", "-")
+}
+
+// Tính số lượng item sẽ xuất hiện tại product list
 const numberItem = pageCol*pageRow
 const pageSize = Math.ceil(FILM.length/numberItem) 
 let startId = (page - 1)*numberItem + 1
@@ -10,6 +44,7 @@ let endId = startId + numberItem
 const element__product_item_box = document.querySelector('.product-item-box')
 
 const itemInStorage = JSON.parse(localStorage.getItem('cart')) || []
+// Hiển thị item ra màn hình
 let all_product = ''
 FILM.slice(startId-1,endId-1).forEach(element => {
     let name_film = element['name']
@@ -32,7 +67,7 @@ FILM.slice(startId-1,endId-1).forEach(element => {
     }
 
     all_product += 
-    `<div class="col ${classCol} m-4 c-1 product-item-box">
+    `<div class="col ${classCol} product-item-box">
         <div class="product-item">
             <i data-id="${id_film}" class="fa-solid item__icon ${classIcon}"></i>
             <a href="pages/product_detail.html?id=${id_film}">
@@ -40,31 +75,30 @@ FILM.slice(startId-1,endId-1).forEach(element => {
             </a>
             <div class="product-item-name">
                 <span class="name_film">${name_film}</span>
-                <span class="year_film">${year_film}</span>
+                <span class="year_film ">${year_film}</span>
             </div>
-            <div class="product-item-info">
+            <div class="product-item-info ">
                 <span class="quanlity-film">HD</span>
                 <span class="longtime-film--star-film">
-                        <span class="material-symbols-outlined material-symbols-outlined--clock_loader_20">clock_loader_20</span>
-                        <span class="longtime-film">${time_film}</span>
+                        <span class="material-symbols-outlined material-symbols-outlined--clock_loader_20 hidden-on-mobile-tablet">clock_loader_20</span>
+                        <span class="longtime-film hidden-on-mobile-tablet">${time_film}</span>
                         <span class="material-symbols-outlined material-symbols-outlined--star">star</span>
                         <span class="star-film">${rate_film}</span>
                 </span>
             </div>
         </div>
     </div>`
-
-    // all_product += '<div class="col l-3 m-4 c-1 product-item-box"><div class="product-item"><span data-info="'+id_film+'" class="material-symbols-outlined material-symbols-outlined--add">add</span><a href="../pages/product_detail.html'+'?id='+id_film+'"><img src="'+src_film+'" alt="" class="product-item-pic"></a><div class="product-item-name"><span class="name_film">'+name_film+'</span><span class="year_film">'+year_film+'</span></div><div class="product-item-info"><span class="quanlity-film">HD</span><span class="longtime-film--star-film"><span class="material-symbols-outlined material-symbols-outlined--clock_loader_20">clock_loader_20</span><span class="longtime-film">'+time_film+'</span><span class="material-symbols-outlined material-symbols-outlined--star">star</span><span class="star-film">'+rate_film+'</span></span></div></div></div>'
 })
 
 element__product_item_box.outerHTML = all_product
 
 
-//////////////
+////////////// Các thao tác thêm xóa 
 
+// Lấy các nút thêm xóa
 const iconActions = document.querySelectorAll(".item__icon")
 
-
+// Xử lý khi nhấn vào nút
 iconActions.forEach((item) =>{
     item.addEventListener('click',(element)=>{
         const addClass = 'item__icon--add';
@@ -78,10 +112,11 @@ iconActions.forEach((item) =>{
     })
 })
 
-
+// Tải item vào localStorage
 function loadingItemToStorage(element) {
     const  item = FILM[element.target.dataset.id - 1]
     let cartItems = []
+    // Cập nhật lại class cho item film
     element.target.classList.remove('item__icon--add', 'fa-plus')
     element.target.classList.add('item__icon--remove', 'fa-minus')
 
@@ -95,9 +130,12 @@ function loadingItemToStorage(element) {
     }
 }
 
+
+// Xóa item khỏi localStorage
 function removeItemFromStorage(element) {
     const  item = FILM[element.target.dataset.id - 1]
     let cartItems = []
+    // Cập nhật lại class cho item film
     element.target.classList.remove('item__icon--remove', 'fa-minus')
     element.target.classList.add('item__icon--add', 'fa-plus')
 
@@ -107,22 +145,12 @@ function removeItemFromStorage(element) {
     localStorage.setItem('cart',JSON.stringify(cartItems))
 }
 
-
+// Tải lại trang nếu xóa localStorage 
 window.addEventListener('storage', function(event) {
     if (event.key === null) {
         window.location.reload();
     }
   });
-  
-function renderRemoveItems(element){
-    const productRemoveds = document.querySelectorAll('.item__icon--remove')
-    productRemoveds.forEach((item)=>{
-        if(item.dataset.id === element.target.dataset.id){
-            item.classList.remove('item__icon--remove', 'fa-minus')
-            item.classList.add('item__icon--add', 'fa-plus')
-        }
-    })
-}
 
 
 

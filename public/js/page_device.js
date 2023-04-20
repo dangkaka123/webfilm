@@ -1,8 +1,10 @@
 // Tạo thanh chuyển
 const pageDeviceBox = document.querySelector('.page_device_box')
 
-renderPageDivice(pageSize)
+// Xuất thanh chuyển trang ra màn hình
+renderPageDivice(pageSize) // biến pageSize đực tính từ file product-list.js
 
+// Hàm tạo các thanh chuyển
 function renderPageDivice(number){
   if(number > 1){
     const pageIndexs = Array.from({length: number}, (_, i) => i + 1)
@@ -38,6 +40,7 @@ const pagePre = document.querySelector('.page_device_box_pre')
 // ẩn các nút 
 hiddenNextPre(pageSize)
 
+// Hàm ẩn các nút nếu chỉ có 1 trang
 function hiddenNextPre(pageSize){
   if(pageSize < 2){
     pageNext.classList.add('hidden')
@@ -45,6 +48,8 @@ function hiddenNextPre(pageSize){
   }
 }
 
+
+// Vô hiệu hóa các nút next, pre nếu đang ở trang cuối hoặc trang đầu
 if( parseInt(page) === 1){
     pagePre.classList.add('disable')
 }
@@ -54,8 +59,6 @@ if( parseInt(page) === pageSize){
 }
 
 // Thao tác click next, pre
-
-
 if(parseInt(page) < pageSize){
   pageNext.addEventListener('click', () => {
       let pageNew = parseInt(page) + 1

@@ -1,6 +1,7 @@
 // Xuất item trong local storage ra giỏ hàng
 renderToCart()
 
+// Hàm xuất item từ trong localStroge
 function renderToCart(){
     const itemInCarts = JSON.parse(localStorage.getItem('cart')) || []
     const contentCart = document.querySelector('.content__cart')
@@ -49,7 +50,7 @@ function renderToCart(){
             remove.classList.add('cart__item-remove', 'fa-solid', 'fa-trash')
             remove.setAttribute('data-id', id_film)
 
-            
+            // Thêm sự kiện click vào nút xóa
             remove.addEventListener('click',  (element) => {
                 element.preventDefault();
                 removeCart(element)
@@ -64,11 +65,13 @@ function renderToCart(){
     }
 }
 
+// Hàm xóa item khỏi giỏ hàng
 function removeCart(element){
-    removeItemFromCart(element)
-    renderToCart()
+    removeItemFromCart(element)// Gọi xóa item trong localStorage
+    renderToCart()// Xuất lại item
 }
 
+// Hàm xóa item trong localStorage
 function removeItemFromCart(element){
     const  item = FILM[element.target.dataset.id - 1]
     let cartItems = JSON.parse(localStorage.getItem('cart')) || []
@@ -76,7 +79,7 @@ function removeItemFromCart(element){
     cartItems.splice(index,1)
     localStorage.setItem('cart',JSON.stringify(cartItems))
 
-
+    // Cập nhật lại class cho item film trong product-list
     const productRemoveds = document.querySelectorAll('.item__icon--remove')
     productRemoveds.forEach((item)=>{
         if(item.dataset.id === element.target.dataset.id){

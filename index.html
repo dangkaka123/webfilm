@@ -20,26 +20,24 @@
     <link rel="stylesheet" href="public/css/download.css" type="text/css">
     <link rel="stylesheet" href="public/css/subcribe.css" type="text/css">
     <link rel="stylesheet" href="public/css/footer.css" type="text/css">
+    <link rel="stylesheet" href="public/css/responsive.css" type="text/css">
 </head>
 
 <body>
     <!-- 
         - Start Header
     -->
-    <header class="header container grid">
+    <header class="header grid">
         <div class="row navbar">
-            <div class="col l-0-5 m-0-5 c-0-5"></div>
 
-            <div class="col l-1 m-1 c-1 navbar__logo-wrapper">
+            <div class="col l-o-0-5 l-1 m-o-0-5 m-2 c-o-1 c-2 navbar__logo-wrapper">
                 <a class="navbar__logo" href="index.html">
-                    <img src="public/assets/navbar/logo_navbar.svg" alt="logo nav" class="navbar__logo-img">
+                    <img src="public/assets/navbar/logo_navbar.png" alt="logo nav" class="navbar__logo-img">
                 </a>
             </div>
 
-            <div class="col l-0-5 m-0-5 c-0-5"></div>
-
-            <div class="col l-8 m-8 c-8 navbar__main row">
-                    <section class="navbar__main-pages-wrapper col l-12 row">
+            <div class="col l-o-0-5 l-8 m-o-0-5 m-6 c-0  navbar__main row">
+                    <section class="navbar__main-pages-wrapper col l-12 hidden-on-mobile-tablet row">
                         <div class="col l-3 m-3 c-3 navbar__main-pages">
                             <a href="index.html" class="navbar__main-pages-link">Trang chủ</a>
                         </div>
@@ -55,20 +53,18 @@
                         <div class="col l-3 m-3 c-3 navbar__main-pages">
                             <a href="pages/myfilm.html" class="navbar__main-pages-link">Phim của tôi</a>
                         </div>
-                    </section>
+                    </section> 
 
-                    <form class="navbar__main-searchbar-wrapper col l-12 row">
-                        <input type="text" class="col l-11 m-11 c-11 navbar__main-searchbar" placeholder="Tìm kiếm">
-                        <div class="col l-1 m-1 c-1 loopicon_box">
+                    <form class="navbar__main-searchbar-wrapper col l-12 m-12 c-12 hidden-on-mobile row">
+                        <input type="text" class="col l-11 m-10 c-11 navbar__main-searchbar" placeholder="Tìm kiếm">
+                        <div class="col l-1 m-2 c-1 loopicon_box">
                             <span  class="navbar__main-loopicon material-symbols-outlined">search</span>
                         </div>
                     </form>
             </div>
 
-            <div class="col l-0-5 m-0-5 c-0-5"></div>
-
-            <div class="col l-0-5 m-0-5 c-0-5 navbar__cart">
-                <div class="navbar__cart-box">
+            <div class="col l-o-0-5 l-1-5 m-o-1 m-2 c-o-6 c-3  navbar__action">
+                <div class="navbar__cart-box hidden-on-mobile-tablet">
                     <i class="fa-solid fa-box-open navbar__cart-icon"></i>
                     <div class="navbar__cart-info">
                         <div class="header__cart">
@@ -95,13 +91,42 @@
                         </div>
                     </div>
                 </div>
+
+                <div class=" navbar__avatar">
+                    <i class="fa-solid fa-user navbar__avatar-icon"></i>
+                </div>
+
+                <div class="navbar__menu-tablet-mobile hidden-on-pc">
+                    <i class="fa-solid fa-bars navbar__menu-icon"></i>
+
+                    <div class="navbar__menu-content-wrapper menu--hidden">
+                        <div class="navbar__menu-content">
+                            <i class="fa-solid fa-arrow-right navbar__menu-exit"></i>
+                            <div class="navbar__main-pages">
+                                <i class="fa-solid fa-house navbar__main-pages-icon"></i>
+                                <a href="index.html" class="navbar__main-pages-link">Trang chủ</a>
+                            </div>
+        
+                            <div class="navbar__main-pages">
+                                <i class="fa-solid fa-film  navbar__main-pages-icon"></i>
+                                <a href="pages/phimchieurap.html" class="navbar__main-pages-link">Phim chiếu rạp</a>
+                            </div>
+        
+                            <div class="navbar__main-pages">
+                                <i class="fa-solid fa-paw  navbar__main-pages-icon"></i>
+                                <a href="pages/hoathinh.html" class="navbar__main-pages-link">Phim hoạt hình</a>
+                            </div>
+        
+                            <div class="navbar__main-pages">
+                                <i class="fa-solid fa-box navbar__main-pages-icon"></i>
+                                <a href="pages/myfilm.html" class="navbar__main-pages-link">Phim của tôi</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script src="./public/js/navbar-menu.js"></script>
             </div>
 
-            <div class="col l-0-5 m-0-5 c-0-5 navbar__avatar">
-                <i class="fa-solid fa-user navbar__avatar-icon"></i>
-            </div>
-           
-            <div class="col l-0-5 m-0-5 c-0-5"></div>
         </div>
     </header>
     <!-- 
@@ -115,7 +140,7 @@
         <!-- 
             - Start Slider
         -->
-        <div class="grid cointainer slider__box">
+        <div class="grid slider__box">
             <div class="slider__dot">
                 <i class="fa-solid fa-circle slider__dot-icon active" data-index="0"></i>
                 <i class="fa-solid fa-circle slider__dot-icon" data-index="1"></i>
@@ -127,8 +152,8 @@
 
             <i class="fa-solid fa-angle-left slider__prev"></i>
             
-            <div class="slider__container row no-gutters">
-                <div class="col l-12 m-12 c-12 slider__main">
+            <div class="slider__container row ">
+                <div class=" slider__main">
                     <div class="slider__item">
                         <img
                             src="https://m.media-amazon.com/images/M/MV5BZjY3MGRhODctOGFmMy00NjhlLWJjODktZmU0NDQ5OTI5ZjcxXkEyXkFqcGdeQXVyMTE5NDQ1MzQ3._V1_FMjpg_UX2048_.jpg"
@@ -217,11 +242,11 @@
         <div class=" download__box">
                 <div class=" download__qr">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/1200px-QR_code_for_mobile_English_Wikipedia.svg.png" alt="" class="download_qr-img">
-                    <div class="download__qr_note">Scan me <i class="fa-solid fa-download"></i></div>
+                    <div class="download__qr_note hidden-on-mobile">Scan me <i class="fa-solid fa-download"></i></div>
                 </div>
                 <div class=" download__content">
                     <div class="download__content-title">Trải Nghiệm Ứng Dụng Trên Điện Thoại</div>
-                    <div class="download__content-context">Tải ứng dụng về điện thoại để trải nghiệm chất lượng dịch vụ của tôi tốt hơn. Cảm ơn các bạn đã cùng đồng hành</div>
+                    <div class="download__content-context">Tải ứng dụng về điện thoại để trải nghiệm chất lượng dịch vụ của tôi tốt hơn. Cảm ơn các bạn đã cùng đồng hành với chúng tôi</div>
                     <div class="download__app">
                         <img src="./public/assets/main/ch-play.png" alt="" class="download__chplay">
                         <img src="./public/assets/main/app-store.png" alt="" class="download__appstore">
@@ -251,15 +276,14 @@
         <!-- start footer top -->
         <section class="footer-top row">
             <div class="col l-0-5 m-0-5 c-0-5"></div>
-            <nav class=" col l-11 m-11 c-11 navbar">
-                <div class="container row">
-                    <div class="col l-1 m-1 c-1 navbar__logo-wrapper">
+            <nav class=" col l-11 m-11 c-11 row">
+                    <div class="col l-1 m-12 c-12 navbar__logo-wrapper">
                         <a class="navbar__logo" href="#">
-                            <img src="./public/assets/navbar/logo_navbar.svg" alt="logo nav" class="navbar__logo-img">
+                            <img src="./public/assets/navbar/logo_navbar.png" alt="logo nav" class="navbar__logo-img">
                         </a>
                     </div>
     
-                    <div class="col l-o-4 l-7 m-o-4 m-7 c-o-4 c-7 navbar__main-pages-wrapper">
+                    <div class="col l-o-4 l-7 m-12 c-0 navbar__main-pages-wrapper">
                         <div class="col l-3 m-3 c-3 navbar__main-pages">
                             <a href="#" class="navbar__main-pages-link">Trang chủ</a>
                         </div>
@@ -277,16 +301,18 @@
                         </div>
                     </div>
     
-                    <div class="col l-12 m-12 c-12 divider"></div>
+                    <div class="col l-12 m-12 c-0 divider"></div>
 
-                    <div class=" col l-3 m-3 c-3 navbar__quicklink-wrapper">
+                    <div class=" col l-3 m-6 c-12 navbar__quicklink-wrapper">
                             <a href="#" class=" quicklink__link">Faq</a>
                             <a href="#" class=" quicklink__link">Help center</a>
                             <a href="#" class=" quicklink__link">Terms of use</a>
                             <a href="#" class=" quicklink__link">Privacy</a>
                     </div>
 
-                    <div class="col l-o-7 l-2 m-o-7 m-2 c-o-7 c-2 navbar__social-link-wrapper">
+                    <div class="col l-0 m-0 c-12 divider "></div>
+
+                    <div class="col l-o-7 l-2 m-o-2 m-4 c-12 navbar__social-link-wrapper">
                             <a href="" class="social-link__link">
                                 <i class="fa-brands fa-facebook"></i>
                             </a>
@@ -303,7 +329,6 @@
                                 <i class="fa-brands fa-linkedin"></i>
                             </a>
                     </div>
-                </div>
             </nav>
             <div class="col l-0-5 m-0-5 c-0-5"></div>
         </section>

@@ -20,54 +20,51 @@
     <link rel="stylesheet" href="../public/css/page_device.css" type="text/css">
     <link rel="stylesheet" href="../public/css/subcribe.css" type="text/css">
     <link rel="stylesheet" href="../public/css/download.css" type="text/css">
-    <link rel="stylesheet" href="../public/css/product_preup.css" type="text/css">
+    <link rel="stylesheet" href="../public/css/responsive.css" type="text/css">
 </head>
 
 <body>
-    <!-- Start header Hai Dang -->
-    <header class="header container grid">
+        <!-- 
+        - Start Header
+    -->
+    <header class="header grid">
         <div class="row navbar">
-            <div class="col l-0-5 m-0-5 c-0-5"></div>
 
-            <div class="col l-1 m-1 c-1 navbar__logo-wrapper">
-                <a class="navbar__logo" href="index.html">
-                    <img src="../public/assets/navbar/logo_navbar.svg" alt="logo nav" class="navbar__logo-img">
+            <div class="col l-o-0-5 l-1 m-o-0-5 m-2 c-o-1 c-2 navbar__logo-wrapper">
+                <a class="navbar__logo" href="../index.html">
+                    <img src="../public/assets/navbar/logo_navbar.png" alt="logo nav" class="navbar__logo-img">
                 </a>
             </div>
 
-            <div class="col l-0-5 m-0-5 c-0-5"></div>
-
-            <div class="col l-8 m-8 c-8 navbar__main row">
-                    <section class="navbar__main-pages-wrapper col l-12 row">
+            <div class="col l-o-0-5 l-8 m-o-0-5 m-6 c-0  navbar__main row">
+                    <section class="navbar__main-pages-wrapper col l-12 hidden-on-mobile-tablet row">
                         <div class="col l-3 m-3 c-3 navbar__main-pages">
                             <a href="../index.html" class="navbar__main-pages-link">Trang chủ</a>
                         </div>
     
                         <div class="col l-3 m-3 c-3 navbar__main-pages">
-                            <a href="phimchieurap.html" class="navbar__main-pages-link">Phim chiếu rạp</a>
+                            <a href="./phimchieurap.html" class="navbar__main-pages-link">Phim chiếu rạp</a>
                         </div>
     
                         <div class="col l-3 m-3 c-3 navbar__main-pages">
-                            <a href="hoathinh.html" class="navbar__main-pages-link">Phim hoạt hình</a>
+                            <a href="./hoathinh.html" class="navbar__main-pages-link">Phim hoạt hình</a>
                         </div>
     
                         <div class="col l-3 m-3 c-3 navbar__main-pages">
-                            <a href="myfilm.html" class="navbar__main-pages-link">Phim của tôi</a>
+                            <a href="./myfilm.html" class="navbar__main-pages-link">Phim của tôi</a>
                         </div>
-                    </section>
+                    </section> 
 
-                    <form class="navbar__main-searchbar-wrapper col l-12 row">
-                        <input type="text" class="col l-11 m-11 c-11 navbar__main-searchbar" placeholder="Tìm kiếm">
-                        <div class="col l-1 m-1 c-1 loopicon_box">
+                    <form class="navbar__main-searchbar-wrapper col l-12 m-12 c-12 hidden-on-mobile row">
+                        <input type="text" class="col l-11 m-10 c-11 navbar__main-searchbar" placeholder="Tìm kiếm">
+                        <div class="col l-1 m-2 c-1 loopicon_box">
                             <span  class="navbar__main-loopicon material-symbols-outlined">search</span>
                         </div>
                     </form>
             </div>
 
-            <div class="col l-0-5 m-0-5 c-0-5"></div>
-
-            <div class="col l-0-5 m-0-5 c-0-5 navbar__cart">
-                <div class="navbar__cart-box">
+            <div class="col l-o-0-5 l-1-5 m-o-1 m-2 c-o-6 c-3  navbar__action">
+                <div class="navbar__cart-box hidden-on-mobile-tablet">
                     <i class="fa-solid fa-box-open navbar__cart-icon"></i>
                     <div class="navbar__cart-info">
                         <div class="header__cart">
@@ -85,8 +82,6 @@
                                 </div>
                             </div> -->
 
-
-
                         </div>
                         <div class="footer__cart">
                             <a href="./myfilm.html" class="footer__cart-text">
@@ -96,16 +91,47 @@
                         </div>
                     </div>
                 </div>
+
+                <div class=" navbar__avatar">
+                    <i class="fa-solid fa-user navbar__avatar-icon"></i>
+                </div>
+
+                <div class="navbar__menu-tablet-mobile hidden-on-pc">
+                    <i class="fa-solid fa-bars navbar__menu-icon"></i>
+
+                    <div class="navbar__menu-content-wrapper menu--hidden">
+                        <div class="navbar__menu-content">
+                            <i class="fa-solid fa-arrow-right navbar__menu-exit"></i>
+                            <div class="navbar__main-pages">
+                                <i class="fa-solid fa-house navbar__main-pages-icon"></i>
+                                <a href="../index.html" class="navbar__main-pages-link">Trang chủ</a>
+                            </div>
+        
+                            <div class="navbar__main-pages">
+                                <i class="fa-solid fa-film  navbar__main-pages-icon"></i>
+                                <a href="./phimchieurap.html" class="navbar__main-pages-link">Phim chiếu rạp</a>
+                            </div>
+        
+                            <div class="navbar__main-pages">
+                                <i class="fa-solid fa-paw  navbar__main-pages-icon"></i>
+                                <a href="./hoathinh.html" class="navbar__main-pages-link">Phim hoạt hình</a>
+                            </div>
+        
+                            <div class="navbar__main-pages">
+                                <i class="fa-solid fa-box navbar__main-pages-icon"></i>
+                                <a href="./myfilm.html" class="navbar__main-pages-link">Phim của tôi</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script src="../public/js/navbar-menu.js"></script>
             </div>
 
-            <div class="col l-0-5 m-0-5 c-0-5 navbar__avatar">
-                <i class="fa-solid fa-user navbar__avatar-icon"></i>
-            </div>
-           
-            <div class="col l-0-5 m-0-5 c-0-5"></div>
         </div>
     </header>
-    <!-- End header -->
+    <!-- 
+        - End header 
+    -->
 
     <main class="main">
         <!-- Start product-list Khanh -->
@@ -137,80 +163,50 @@
         </div>
     <!-- end page device -->
     
-        <!-- start product__preup K.Cuong -->
-        <!-- <div class="grid wide">
-            <div class="row product__preup">
-                <div class="col l-12 swiper_box">
-                    <swiper-container class="mySwiper" slides-per-view="3" centered-slides="true" space-between="30"
-                        pagination="true" pagination-type="fraction" navigation="true">
-                        <swiper-slide>
-                            <img src="https://codewithsadee.github.io/filmlane/assets/images/upcoming-1.png" alt="">
-                        </swiper-slide>
-                        <swiper-slide>
-                            <img src="https://codewithsadee.github.io/filmlane/assets/images/upcoming-2.png" alt="">
-                        </swiper-slide>
-                        <swiper-slide>
-                            <img src="https://codewithsadee.github.io/filmlane/assets/images/upcoming-3.png" alt="">
-                        </swiper-slide>
-                        <swiper-slide>
-                            <img src="https://codewithsadee.github.io/filmlane/assets/images/upcoming-4.png" alt="">
-                        </swiper-slide>
-                        <swiper-slide>
-                            <img src="https://codewithsadee.github.io/filmlane/assets/images/movie-1.png" alt="">
-                        </swiper-slide>
-                        <swiper-slide>
-                            <img src="https://codewithsadee.github.io/filmlane/assets/images/movie-2.png" alt="">
-                        </swiper-slide>
-                        
-                    </swiper-container>
-                    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
-                </div>
-            </div>
-        </div> -->
-        <!-- end product__preup -->
     </main>
 
-    <!-- start footer Hai Dang -->
+    <!-- start footer -->
     <footer class="footer grid">
         <!-- start footer top -->
         <section class="footer-top row">
             <div class="col l-0-5 m-0-5 c-0-5"></div>
-            <nav class=" col l-11 m-11 c-11 navbar">
-                <div class="container row">
-                    <div class="col l-1 m-1 c-1 navbar__logo-wrapper">
-                        <a class="navbar__logo" href="../index.html">
-                            <img src="../public/assets/navbar/logo_navbar.svg" alt="logo nav" class="navbar__logo-img">
+            <nav class=" col l-11 m-11 c-11 row">
+                    <div class="col l-1 m-12 c-12 navbar__logo-wrapper">
+                        <a class="navbar__logo" href="#">
+                            <img src="../public/assets/navbar/logo_navbar.png" alt="logo nav" class="navbar__logo-img">
                         </a>
                     </div>
     
-                    <div class="col l-o-4 l-7 m-o-4 m-7 c-o-4 c-7 navbar__main-pages-wrapper">
+                    <div class="col l-o-4 l-7 m-12 c-0 navbar__main-pages-wrapper">
                         <div class="col l-3 m-3 c-3 navbar__main-pages">
-                            <a href="../index.html" class="navbar__main-pages-link">Trang chủ</a>
+                            <a href="#" class="navbar__main-pages-link">Trang chủ</a>
                         </div>
         
                         <div class="col l-3 m-3 c-3 navbar__main-pages">
-                            <a href="phimchieurap.html" class="navbar__main-pages-link">Phim chiếu rạp</a>
+                            <a href="./phimchieurap.html" class="navbar__main-pages-link">Phim chiếu rạp</a>
                         </div>
         
                         <div class="col l-3 m-3 c-3 navbar__main-pages">
-                            <a href="hoathinh.html" class="navbar__main-pages-link">Phim hoạt hình</a>
+                            <a href="./hoathinh.html" class="navbar__main-pages-link">Phim hoạt hình</a>
                         </div>
         
                         <div class="col l-3 m-3 c-3 navbar__main-pages">
-                            <a href="myfilm.html" class="navbar__main-pages-link">Phim của tôi</a>
+                            <a href="./myfilm.html" class="navbar__main-pages-link">Phim của tôi</a>
                         </div>
                     </div>
     
-                    <div class="col l-12 m-12 c-12 divider"></div>
+                    <div class="col l-12 m-12 c-0 divider"></div>
 
-                    <div class=" col l-3 m-3 c-3 navbar__quicklink-wrapper">
+                    <div class=" col l-3 m-6 c-12 navbar__quicklink-wrapper">
                             <a href="#" class=" quicklink__link">Faq</a>
                             <a href="#" class=" quicklink__link">Help center</a>
                             <a href="#" class=" quicklink__link">Terms of use</a>
                             <a href="#" class=" quicklink__link">Privacy</a>
                     </div>
 
-                    <div class="col l-o-7 l-2 m-o-7 m-2 c-o-7 c-2 navbar__social-link-wrapper">
+                    <div class="col l-0 m-0 c-12 divider "></div>
+
+                    <div class="col l-o-7 l-2 m-o-2 m-4 c-12 navbar__social-link-wrapper">
                             <a href="" class="social-link__link">
                                 <i class="fa-brands fa-facebook"></i>
                             </a>
@@ -227,7 +223,6 @@
                                 <i class="fa-brands fa-linkedin"></i>
                             </a>
                     </div>
-                </div>
             </nav>
             <div class="col l-0-5 m-0-5 c-0-5"></div>
         </section>

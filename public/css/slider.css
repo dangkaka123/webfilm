@@ -1,18 +1,22 @@
+
 .slider__box{
+    width: 100%;
+    overflow: hidden;
     position: relative;
 }
 
 .slider__container {
-    overflow: hidden;
+    width: 400%;
 }
 
 .slider__main{
+    width: 400%;
     display: flex;
-    transition: margin-left linear 0.25s;
+    transition: transform linear 0.25s;
 }
 
 .slider__item{
-    flex: 1 0 100%;
+    flex: 1 0 25%;
 }
 
 .slider__item img {
@@ -30,6 +34,7 @@
     left: 50%;
     transform: translateX(-50%);
     cursor: pointer;
+    z-index: 1;
 }
 
 .slider__dot-icon{
@@ -49,6 +54,7 @@
     font-size: 60px;
     padding: 15px 10px;
     cursor: pointer;
+    z-index: 1;
 }
 
 .slider__next{

@@ -19,8 +19,8 @@ window.addEventListener("load",() =>{
             e.target.classList.add('active')
             const sliderIndex = parseInt(e.target.dataset.index)
             index = sliderIndex
-            positionItem = (index * 100) + '%'
-            sliderMain.style = `margin-left: -${positionItem}`
+            positionItem = (index * 25) + '%'
+            sliderMain.style = `transform: translateX(-${positionItem})`
         })
     })
     
@@ -29,8 +29,8 @@ window.addEventListener("load",() =>{
         if(index === sliderLength){
             index = 0;
         }
-        positionItem = (index * 100) + '%'
-        sliderMain.style = `margin-left: -${positionItem}`
+        positionItem = (index * 25) + '%'
+        sliderMain.style = `transform: translateX(-${positionItem})`
         $('.slider__dot-icon.active').classList.remove('active')
         sliderDots[index].classList.add('active')
     })
@@ -40,8 +40,8 @@ window.addEventListener("load",() =>{
         if(index === -1){
             index = sliderLength-1;
         }
-        positionItem = (index * 100) + '%'
-        sliderMain.style = `margin-left: -${positionItem}`
+        positionItem = (index * 25) + '%'
+        sliderMain.style = `transform: translateX(-${positionItem})`
         $('.slider__dot-icon.active').classList.remove('active')
         sliderDots[index].classList.add('active')
     })
