@@ -168,34 +168,25 @@ function renderToSearchFilms(items){
             </div>`
         })
         element__product_item_box.innerHTML = all_product
-        const iconActions = document.querySelectorAll(".item__icon--remove")
         
+        const iconActions = document.querySelectorAll(".item__icon")
+
         iconActions.forEach((item) =>{
             item.addEventListener('click',(element)=>{
-                removeItemFromStorage(element) 
+                const addClass = 'item__icon--add';
+                const isAdd = element.target.classList.contains(addClass);
+                if(isAdd){
+                    loadingItemToStorage(element)
+                } else {
+                    removeItemFromStorage(element)
+                }
+                renderToCart() // Render lại trong  giỏ hàng
             })
         })
     }
 }
 
 ///// Thao tác thêm xóa
-
-const iconActions = document.querySelectorAll(".item__icon")
-
-
-iconActions.forEach((item) =>{
-    item.addEventListener('click',(element)=>{
-        const addClass = 'item__icon--add';
-        const isAdd = element.target.classList.contains(addClass);
-        if(isAdd){
-            loadingItemToStorage(element)
-        } else {
-            removeItemFromStorage(element)
-        }
-        renderToCart() // Render lại trong  giỏ hàng
-    })
-})
-
 
 function loadingItemToStorage(element) {
     const  item = FILM[element.target.dataset.id - 1]
@@ -317,4 +308,4 @@ window.addEventListener('storage', function(event) {
     if (event.key === null) {
         window.location.reload();
     }
-  });
+});
