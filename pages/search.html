@@ -12,9 +12,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="../public/css/reset.css" type="text/css">
     <link rel="stylesheet" href="../public/css/grid.css" type="text/css">
-    <link rel="stylesheet" href="../public/css/main.css" type="text/css">
     <link rel="stylesheet" href="../public/css/header.css" type="text/css">
     <link rel="stylesheet" href="../public/css/navbar.css" type="text/css">
+    <link rel="stylesheet" href="../public/css/search.css" type="text/css">
+    <link rel="stylesheet" href="../public/css/main.css" type="text/css">
     <link rel="stylesheet" href="../public/css/slider.css" type="text/css">
     <link rel="stylesheet" href="../public/css/product_list.css" type="text/css">
     <link rel="stylesheet" href="../public/css/footer.css" type="text/css">
@@ -22,7 +23,6 @@
     <link rel="stylesheet" href="../public/css/subcribe.css" type="text/css">
     <link rel="stylesheet" href="../public/css/download.css" type="text/css">
     <link rel="stylesheet" href="../public/css/product_preup.css" type="text/css">
-    <link rel="stylesheet" href="../public/css/myfilm.css" type="text/css">
     <link rel="stylesheet" href="../public/css/page_device.css" type="text/css">
     <link rel="stylesheet" href="../public/css/responsive.css" type="text/css">
 </head>
@@ -66,6 +66,33 @@
             </div>
 
             <div class="col l-o-0-5 l-1-5 m-o-1 m-2 c-o-6 c-3  navbar__action">
+                <div class="navbar__cart-box hidden-on-mobile-tablet">
+                    <i class="fa-solid fa-box-open navbar__cart-icon"></i>
+                    <div class="navbar__cart-info">
+                        <div class="header__cart">
+                            <span class="header__cart-title">Danh sách phim</span>
+                        </div>
+                        <div class="content__cart">
+                            <!-- <div data-id="1" style="background-image: url('./public/assets/img/movie/avatar-2-poster.jpg');" class="cart__item">
+                                <img class="cart__item-img" src="./public/assets/img/movie/avatar-2-poster.jpg" alt="">
+                                
+                                <div class="cart__item-title">
+                                    <sapn class="cart__item-title-text">Avatar 2: Dòng chảy của nước</sapn>
+                                </div>
+                                <div class="cart__item-remove">
+                                    <i class="fa-solid fa-trash"></i>
+                                </div>
+                            </div> -->
+
+                        </div>
+                        <div class="footer__cart">
+                            <a href="./myfilm.html" class="footer__cart-text">
+                                Vào trang xem chi tiết
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
                 <div class=" navbar__avatar">
                     <i class="fa-solid fa-user navbar__avatar-icon"></i>
@@ -116,11 +143,11 @@
     <main class="main">
         <!-- Start List Film Khanh -->
         <div class="grid wide">
-            <div class="row my_film">
-                <div class="col l-12 my_film-title">Danh sách phim yêu thích</div>
-                <div class="col l-12 product-item-box row">
+            <div class="row search_film">
+                <div class="col l-12 search__film-title">Danh sách phim tìm kiếm</div>
+                <div class="col l-12 m-12 c-12 product-item-box row">
+                    
                 </div>
-    
             </div>
         </div>
         <!-- End List Film -->
@@ -210,7 +237,7 @@
 
 
     <script src="../db/data.js"></script>
-    <script src="myfilm.js"></script>
+    <script src="search.js"></script>
     <script src="../public/js/page_device.js"></script>
     
 </body>

@@ -46,7 +46,6 @@ window.addEventListener("load",() =>{
         sliderDots[index].classList.add('active')
     })
 
-   
     setInterval(()=>{
         sliderNext.click()
     }, 3000)

@@ -1,4 +1,4 @@
-// Xuất item trong local storage ra giỏ hàng
+////// Xuất item trong local storage ra giỏ hàng
 renderToCart()
 
 // Hàm xuất item từ trong localStroge
@@ -88,3 +88,58 @@ function removeItemFromCart(element){
         }
     })
 }
+
+//////// Chức năng tìm kiếm
+if(window.innerWidth >= 740){
+    const input = document.querySelector(".navbar__main-searchbar")
+    input.addEventListener("keydown", (evt) => {
+        if(evt.key === "Enter"){
+            evt.preventDefault()
+        }
+    })
+
+    input.addEventListener("keyup", (evt) => {
+        if(evt.key === "Enter"){
+            const valueInput = evt.target.value
+            const newUrl = 'pages/search.html' + '?' + `search=${valueInput}`
+            window.location.href = newUrl
+        }
+    })
+
+    const btnSearch = document.querySelector(".loopicon_box")
+
+    btnSearch.addEventListener('click', (evt) => {
+        const input = document.querySelector(".navbar__main-searchbar")
+        const valueInput = input.value
+        const newUrl = 'pages/search.html' + '?' + `search=${valueInput}`
+        window.location.href = newUrl
+    })
+}else if (window.innerWidth < 740){
+    const input = document.querySelector(".menu__search-input")
+    input.addEventListener("keydown", (evt) => {
+        if(evt.key === "Enter"){
+            evt.preventDefault()
+        }
+    })
+    input.addEventListener("keyup", (evt) => {
+        if(evt.key === "Enter"){
+            const valueInput = evt.target.value
+            const newUrl = 'pages/search.html' + '?' + `search=${valueInput}`
+            window.location.href = newUrl
+        }
+    })
+
+    const btnSearch = document.querySelector(".menu__search-icon")
+
+    btnSearch.addEventListener('click', (evt) => {
+        const input = document.querySelector(".menu__search-input")
+        const valueInput = input.value
+        const newUrl = 'pages/search.html' + '?' + `search=${valueInput}`
+        window.location.href = newUrl
+    })
+}
+
+function searchFilmByName(name) {
+    const result = FILM.filter(film => film.name.toLowerCase().includes(name.toLowerCase()));
+    return result;
+  }

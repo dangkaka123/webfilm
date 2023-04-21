@@ -137,15 +137,6 @@
         height: 30vh;
     }
 
-    /* .item__icon{
-        padding: 8px;
-    }
-
-    .product-item:hover > .item__icon--add,
-    .product-item:hover > .item__icon--remove{
-        padding: 10px;
-    } */
-
     .page_device_box_pre,.page_device_box_next,.page_device_box_item{
         font-size: 14px;
         min-width: 30px;
@@ -235,6 +226,11 @@
     .item__icon.item__icon--add:hover{
         background-color: var(--black-color);
         color: var(--primary-color);
+    }
+
+    /* My film */
+    .no-product{
+        font-size: 20px;
     }
 }
 
