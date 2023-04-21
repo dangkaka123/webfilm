@@ -49,5 +49,5 @@ window.addEventListener("load",() =>{
    
     setInterval(()=>{
         sliderNext.click()
-    }, 4000)
+    }, 3000)
 })
