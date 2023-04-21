@@ -3,6 +3,12 @@ const params = new URLSearchParams(window.location.search)
 const page = params.get('page') || 1
 
 /////// Cập nhật item film tại product list
+
+// Lấy  các phim hoạt hình
+const filmMovie = FILM.filter((film) => {
+    return film.type_film === 'chiếu rạp'
+})
+
 // Khởi tạo cột, hàng và class mặc định cho item
 let pageCol = 4
 let pageRow = 3
@@ -43,18 +49,13 @@ if(window.innerWidth < 740){
 
 // Tính số lượng item sẽ xuất hiện tại product list
 const numberItem = pageCol*pageRow
-const pageSize = Math.ceil(FILM.length/numberItem) 
+const pageSize = Math.ceil(filmMovie.length/numberItem) 
 let startId = (page - 1)*numberItem + 1
 let endId = startId + numberItem
 const element__product_item_box = document.querySelector('.product-item-box')
 
 // Lấy item trong local Storage
 const itemInStorage = JSON.parse(localStorage.getItem('cart')) || []
-
-// Lấy  các phim hoạt hình
-const filmMovie = FILM.filter((film) => {
-    return film.type_film === 'chiếu rạp'
-})
 
 // Hiển thị film ra màn hình
 let all_product = ''

@@ -65,6 +65,10 @@
     width: 85%;
 }
 
+.icon__start{
+    color: var(--primary-color);
+}
+
 .detail_film_info_box--check{
     padding: 10px;
     font-size: 1.2em;

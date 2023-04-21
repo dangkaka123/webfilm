@@ -24,9 +24,11 @@ const exitBg = document.querySelector('.navbar__menu-content-wrapper')
 
 exitBg.addEventListener('click', (e)=>{
     const isContenMenu = e.target.classList.contains('navbar__menu-content')
-    if(!isContenMenu){
-        disibleMenu()
+    const isInput = e.target.tagName.toLowerCase() === 'input' || e.target.classList.contains('menu__search-icon');
+    if (isContenMenu || isInput){
+        return
     }
+    disibleMenu()
 })
 
 

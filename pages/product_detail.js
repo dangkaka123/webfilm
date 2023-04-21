@@ -23,11 +23,11 @@ const innderDetailFilm = `
     <div class="grid wide" >
         <div class="row detail_film">
 
-            <div class="col l-3 detail_film_img_box ">
+            <div class="col l-3 c-12 detail_film_img_box ">
             <img src="${src_film}" alt="" class="detail_film_img">
             </div>
 
-            <div class="col l-9 detail_film_info_box">
+            <div class="col l-9 c-12 detail_film_info_box">
                 <div class="detail_film_info_box--title">${film.name}</div>
 
                 <div class="detail_film_info_box--text">
@@ -48,7 +48,7 @@ const innderDetailFilm = `
                 </div>
                 <div class="detail_film_info_box--text">
                     <div class="info-text info--title"> Đánh giá:  </div>
-                    <div class="info--subtitle">${film.rating} <i class="fa-solid fa-star"></i> </div>
+                    <div class="info--subtitle">${film.rating} <i class="fa-solid fa-star icon__start"></i> </div>
                 </div>
 
                 <div class="detail_film_info_box--check">

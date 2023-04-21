@@ -54,6 +54,22 @@
         justify-content: center;
     }
 
+    /* Detail film */
+    .detail_film_img_box{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 0;
+    }
+
+    .detail_film_img{
+        width: 60%;
+    }
+
+    .detail_film_info_box{
+        flex-direction: column;
+    }
+
     .detail_film-video{
         width: 100%;
         display: flex;
@@ -121,14 +137,14 @@
         height: 30vh;
     }
 
-    .item__icon{
+    /* .item__icon{
         padding: 8px;
     }
 
     .product-item:hover > .item__icon--add,
     .product-item:hover > .item__icon--remove{
         padding: 10px;
-    }
+    } */
 
     .page_device_box_pre,.page_device_box_next,.page_device_box_item{
         font-size: 14px;
@@ -161,8 +177,64 @@
         gap: 20px;
     }
 
+    .product-item:hover{
+        transform: translateY(0px);
+        box-shadow: unset;
+    }
+
+    .product-item .item__icon{
+        padding: 10px;
+        border-radius: 10px;
+        font-size: 22px;
+        border-width: 4px;
+    }
+
+    .product-item:hover > .item__icon{
+        padding: 10px;
+    } 
+
     .my_film-title{
         font-size: 22px;
+    }
+
+    /* Detail film */
+
+    .detail_film_info_box--title{
+        font-size: 25px;
+    }
+
+    .detail_film_info_box--text{
+        font-size: 18px;
+    }
+
+    .info--title{
+        width: 40%;
+    }
+
+    .info--subtitle{
+        padding-right: 20px;
+    }
+
+    .detail_film_info_box--check-watchnow{
+        font-size: 16px;
+    }
+
+    .detail_film_info_box--check .item__icon{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 26px;
+        width: 64px;
+    }
+
+    .item__icon.item__icon--remove:hover{
+        background-color: red;
+        color: var(--black-color);
+    }
+
+    .item__icon.item__icon--add:hover{
+        background-color: var(--black-color);
+        color: var(--primary-color);
     }
 }
 
@@ -178,6 +250,10 @@
 
     .product-item img{
         height: 300px;
+    }
+
+    .info--title{
+        width: 20%;
     }
 }
 
