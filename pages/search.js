@@ -14,8 +14,12 @@ if(window.innerWidth >= 740){
     input.addEventListener("keyup", (evt) => {
         if(evt.key === "Enter"){
             const valueInput = evt.target.value
-            const newUrl = 'search.html' + '?' + `search=${valueInput}`
-            window.location.href = newUrl
+            if(valueInput !== ""){
+                const newUrl = 'search.html' + '?' + `search=${valueInput}`
+                window.location.href = newUrl
+            } else{
+                evt.preventDefault()
+            }
         }
     })
 
@@ -24,8 +28,12 @@ if(window.innerWidth >= 740){
     btnSearch.addEventListener('click', (evt) => {
         const input = document.querySelector(".navbar__main-searchbar")
         const valueInput = input.value
-        const newUrl = 'search.html' + '?' + `search=${valueInput}`
-        window.location.href = newUrl
+        if(valueInput !== ""){
+            const newUrl = 'search.html' + '?' + `search=${valueInput}`
+            window.location.href = newUrl
+        } else{
+            evt.preventDefault()
+        }
     })
 } else if (window.innerWidth < 740){
     const input = document.querySelector(".menu__search-input")
@@ -37,8 +45,12 @@ if(window.innerWidth >= 740){
     input.addEventListener("keyup", (evt) => {
         if(evt.key === "Enter"){
             const valueInput = evt.target.value
-            const newUrl = 'search.html' + '?' + `search=${valueInput}`
-            window.location.href = newUrl
+            if(valueInput !== ""){
+                const newUrl = 'search.html' + '?' + `search=${valueInput}`
+                window.location.href = newUrl
+            } else{
+                evt.preventDefault()
+            }
         }
     })
 
@@ -47,8 +59,12 @@ if(window.innerWidth >= 740){
     btnSearch.addEventListener('click', (evt) => {
         const input = document.querySelector(".menu__search-input")
         const valueInput = input.value
-        const newUrl = 'search.html' + '?' + `search=${valueInput}`
-        window.location.href = newUrl
+        if(valueInput !== ""){
+            const newUrl = 'search.html' + '?' + `search=${valueInput}`
+            window.location.href = newUrl
+        } else{
+            evt.preventDefault()
+        }
     })
 }
 
