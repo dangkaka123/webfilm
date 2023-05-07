@@ -13,6 +13,18 @@ window.addEventListener("load",() =>{
     let index = 0
     let positionItem = 0
 
+    let intervalId = setInterval(() => {
+        sliderNext.click()
+    }, 3000)
+
+    const restartInterval = () => {
+        clearInterval(intervalId)
+        intervalId = setInterval(() => {
+          sliderNext.click()
+        }, 3000)
+      }
+
+    
     Array.from(sliderDots).forEach(dot=> {
         dot.addEventListener('click',(e)=>{
             ($('.slider__dot-icon.active')).classList.remove('active')
@@ -21,6 +33,7 @@ window.addEventListener("load",() =>{
             index = sliderIndex
             positionItem = (index * 25) + '%'
             sliderMain.style = `transform: translateX(-${positionItem})`
+            restartInterval()
         })
     })
     
@@ -33,6 +46,8 @@ window.addEventListener("load",() =>{
         sliderMain.style = `transform: translateX(-${positionItem})`
         $('.slider__dot-icon.active').classList.remove('active')
         sliderDots[index].classList.add('active')
+
+        restartInterval()
     })
 
     sliderPrev.addEventListener('click', () => {
@@ -44,9 +59,7 @@ window.addEventListener("load",() =>{
         sliderMain.style = `transform: translateX(-${positionItem})`
         $('.slider__dot-icon.active').classList.remove('active')
         sliderDots[index].classList.add('active')
-    })
 
-    setInterval(()=>{
-        sliderNext.click()
-    }, 3000)
+        restartInterval()
+    })
 })

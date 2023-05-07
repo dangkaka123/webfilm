@@ -61,7 +61,7 @@ const innderDetailFilm = `
             </div>
 
             <div class="col l-12 detail_film-video">
-                <iframe id="video_iframe" src="${film.src}" allowfullscreen frameborder="0" width="1200" height="600" >
+                <iframe id="video_iframe" src="${film.src}" allowfullscreen frameborder="0" >
                 </iframe>                    
             </div>
         </div>

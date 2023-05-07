@@ -5,7 +5,6 @@
     background-size: cover;
     background-position: center;
     position: relative;
-
 }
 
 .detail_film-box::after{
@@ -135,12 +134,15 @@
 
 .detail_film-video{
     margin: 80px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
 
 #video_iframe{
-    scroll-margin-top: 115px;
-}
-
-iframe {
-    border: 1px solid #ccc;
+    scroll-margin-top: 120px;
+    width: 84vw;
+    height: 600px;
+    border: 2px solid #ccc;
 }
