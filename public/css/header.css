@@ -6,4 +6,9 @@
     right: 0;
     z-index: 3;
     height: 114px;
+     transition: 0.5s ease-out;
+}
+
+.header.hidden{
+    display: none;
 }

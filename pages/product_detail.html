@@ -22,13 +22,15 @@
     <link rel="stylesheet" href="../public/css/product_preup.css" type="text/css">
     <link rel="stylesheet" href="../public/css/detail_film.css" type="text/css">
     <link rel="stylesheet" href="../public/css/responsive.css" type="text/css">
+    <link rel="stylesheet" href="../public/css/go-top.css" type="text/css">
 </head>
 
 <body>
-    <!-- Start header Hai Dang -->
+    <!-- 
+        - Start Header 
+    -->
     <header class="header grid">
         <div class="row navbar">
-
             <div class="col l-o-0-5 l-1 m-o-0-5 m-2 c-o-1 c-2 navbar__logo-wrapper">
                 <a class="navbar__logo" href="../index.html">
                     <img src="../public/assets/navbar/logo_navbar.png" alt="logo nav" class="navbar__logo-img">
@@ -70,6 +72,7 @@
                             <span class="header__cart-title">Danh sách phim</span>
                         </div>
                         <div class="content__cart">
+                            <!-- Chèn từ navbar_cart.js -->
                             <!-- <div data-id="1" style="background-image: url('./public/assets/img/movie/avatar-2-poster.jpg');" class="cart__item">
                                 <img class="cart__item-img" src="./public/assets/img/movie/avatar-2-poster.jpg" alt="">
                                 
@@ -80,7 +83,6 @@
                                     <i class="fa-solid fa-trash"></i>
                                 </div>
                             </div> -->
-
                         </div>
                         <div class="footer__cart">
                             <a href="./myfilm.html" class="footer__cart-text">
@@ -95,6 +97,7 @@
                     <i class="fa-solid fa-user navbar__avatar-icon"></i>
                 </div>
 
+                <!-- Navbar on mobile and tablet -->
                 <div class="navbar__menu-tablet-mobile hidden-on-pc">
                     <i class="fa-solid fa-bars navbar__menu-icon"></i>
 
@@ -135,12 +138,17 @@
 
         </div>
     </header>
-    <!-- End header -->
+    <!-- 
+        - End Header 
+    -->
 
+    <!-- 
+        - Start Main
+     -->
     <main class="main">
         <div class="detail_film-box">
-
-            <!-- Start detail film Khanh -->
+            <!-- Chèn từ product_detail.js -->
+            <!-- Start detail film -->
                 <!-- <div class="grid wide ">
                     <div class="row detail_film">
                         <div class="col l-3 detail_film_img_box ">
@@ -191,10 +199,17 @@
             <!-- End detail film -->
         </div>
     </main>
+    <!-- 
+        - End Main
+     -->
 
-    <!-- start footer -->
+    <!-- 
+        - Start footer 
+    -->
     <footer class="footer grid">
-        <!-- start footer top -->
+        <!-- 
+            Start footer top
+         -->
         <section class="footer-top row">
             <div class="col l-0-5 m-0-5 c-0-5"></div>
             <nav class=" col l-11 m-11 c-11 row">
@@ -253,17 +268,33 @@
             </nav>
             <div class="col l-0-5 m-0-5 c-0-5"></div>
         </section>
-        <!-- end footer top -->
-
+        <!-- 
+            -End footer top
+         -->
+        
+        <!-- 
+            - Start footer bottom
+         -->
         <section class="footer-bottom">
             <p class="coppy-right">© 2023 - Copyright</p>
         </section>
-        <!-- end footer bottom -->
+        <!-- 
+            - End footer bottom 
+        -->
     </footer>
-    <!-- end footer -->
+    <!-- 
+        - End footer 
+    -->
+
+    <!--  Go to Top -->
+    <a href="#top" class="go-top">
+        <i class="fa-solid fa-angle-up go-top__icon"></i>
+    </a>
 
     <script src="../db/data.js"></script>
     <script src="product_detail.js"></script>
+    <script src="../public/js/go-top.js"></script>
+
 </body>
 
 </html>

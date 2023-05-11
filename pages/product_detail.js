@@ -272,3 +272,22 @@ function searchFilmByName(name) {
     const result = FILM.filter(film => film.name.toLowerCase().includes(name.toLowerCase()));
     return result;
   }
+
+///// Ẩn header
+function hiddenHeader()  {
+    if(window.innerWidth >= 1024){
+        const header = document.querySelector(".header");
+        
+        window.addEventListener("scroll", function () {
+        
+          window.scrollY >= 500 ? header.classList.add("hidden") : header.classList.remove("hidden");
+        
+        });
+    }
+}
+
+hiddenHeader()
+
+window.addEventListener('resize', () => {
+    hiddenHeader()
+})

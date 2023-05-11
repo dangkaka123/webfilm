@@ -25,7 +25,7 @@ window.addEventListener("load",() =>{
       }
 
     
-    Array.from(sliderDots).forEach(dot=> {
+    Array.from(sliderDots).forEach( dot => {
         dot.addEventListener('click',(e)=>{
             ($('.slider__dot-icon.active')).classList.remove('active')
             e.target.classList.add('active')

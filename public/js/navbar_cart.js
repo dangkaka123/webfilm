@@ -157,5 +157,5 @@ if(window.innerWidth >= 740){
 
 function searchFilmByName(name) {
     const result = FILM.filter(film => film.name.toLowerCase().includes(name.toLowerCase()));
-    return result;
+    return result
   }
