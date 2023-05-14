@@ -2,7 +2,7 @@
 const params = new URLSearchParams(window.location.search)
 const page = params.get('page') || 1
 
-/////// Cập nhật item film tại product list
+/////////// Cập nhật item film tại product list
 // Khởi tạo cột, hàng và class mặc định cho item
 let pageCol = 4
 let pageRow = 2
@@ -80,12 +80,10 @@ function renderToMyFilm(items){
             }
         
             all_product += 
-            `<div class="col ${classCol} product-item-box">
+            `<a href="product_detail.html?id=${id_film}" class="col ${classCol} product-item-box">
                 <div class="product-item">
                     <i data-id="${id_film}" class="fa-solid item__icon ${classIcon}"></i>
-                    <a href="./product_detail.html?id=${id_film}">
-                        <img src="${src_film}" alt="" class="product-item-pic">
-                    </a>
+                    <img src="${src_film}" alt="" class="product-item-pic">
                     <div class="product-item-name">
                         <span class="name_film">${name_film}</span>
                         <span class="year_film ">${year_film}</span>
@@ -100,13 +98,15 @@ function renderToMyFilm(items){
                         </span>
                     </div>
                 </div>
-            </div>`
+            </a>`
         })
         element__product_item_box.innerHTML = all_product
-        const iconActions = document.querySelectorAll(".item__icon--remove")
         
+        ///// Thêm sự kiện click vào nút xóa
+        const iconActions = document.querySelectorAll(".item__icon--remove")
         iconActions.forEach((item) =>{
             item.addEventListener('click',(element)=>{
+                element.preventDefault()
                 removeItemFromStorage(element) 
             })
         })
@@ -128,7 +128,7 @@ function removeItemFromStorage(element) {
     renderToMyFilm(cartItems)
 }
 
-//// Chức năng tìm kiếm
+///////// Chức năng tìm kiếm
 if(window.innerWidth >= 740){
     const input = document.querySelector(".navbar__main-searchbar")
     input.addEventListener("keydown", (evt) => {

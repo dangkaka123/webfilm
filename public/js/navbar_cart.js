@@ -6,6 +6,8 @@ function renderToCart(){
     const itemInCarts = JSON.parse(localStorage.getItem('cart')) || []
     const contentCart = document.querySelector('.content__cart')
     contentCart.innerHTML =  ''
+
+    // Nếu như không có phim nào trong giỏ hàng
     if(itemInCarts.length === 0) {
         const divNoCart = document.createElement('div')
         divNoCart.classList.add('no-item')
@@ -16,7 +18,7 @@ function renderToCart(){
 
         divNoCart.appendChild(imgNoCart)
         contentCart.appendChild(divNoCart)
-    } else {
+    } else { // Có phim trong giỏ hàng
         itemInCarts.forEach(item => {
             let name_film = item['name']
             let id_film = item['id']
@@ -90,6 +92,7 @@ function removeItemFromCart(element){
 }
 
 //////// Chức năng tìm kiếm
+
 if(window.innerWidth >= 740){
     const input = document.querySelector(".navbar__main-searchbar")
     input.addEventListener("keydown", (evt) => {
@@ -155,6 +158,7 @@ if(window.innerWidth >= 740){
     })
 }
 
+// Tìm kiếm phim theo tên phim
 function searchFilmByName(name) {
     const result = FILM.filter(film => film.name.toLowerCase().includes(name.toLowerCase()));
     return result

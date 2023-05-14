@@ -13,10 +13,12 @@ window.addEventListener("load",() =>{
     let index = 0
     let positionItem = 0
 
+    // Hàm tự động click
     let intervalId = setInterval(() => {
         sliderNext.click()
     }, 3000)
 
+    // Hàm làm mới
     const restartInterval = () => {
         clearInterval(intervalId)
         intervalId = setInterval(() => {
@@ -24,7 +26,7 @@ window.addEventListener("load",() =>{
         }, 3000)
       }
 
-    
+    // Ân vào các nút tròn
     Array.from(sliderDots).forEach( dot => {
         dot.addEventListener('click',(e)=>{
             ($('.slider__dot-icon.active')).classList.remove('active')
@@ -37,6 +39,7 @@ window.addEventListener("load",() =>{
         })
     })
     
+    // Ấn vào nút tiến
     sliderNext.addEventListener('click', () => {
         index++
         if(index === sliderLength){
@@ -50,6 +53,7 @@ window.addEventListener("load",() =>{
         restartInterval()
     })
 
+    // Ấn vào nút lùi
     sliderPrev.addEventListener('click', () => {
         index--
         if(index === -1){

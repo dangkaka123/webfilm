@@ -1,4 +1,4 @@
-// Tạo thanh chuyển
+//////Tạo thanh chuyển
 const pageDeviceBox = document.querySelector('.page_device_box')
 
 // Xuất thanh chuyển trang ra màn hình

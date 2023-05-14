@@ -74,12 +74,10 @@ filmMovie.slice(startId-1,endId-1).forEach(element => {
         }
     
         all_product += 
-        `<div class="col ${classCol} product-item-box">
+        `<a href="product_detail.html?id=${id_film}" class="col ${classCol} product-item-box">
             <div class="product-item">
                 <i data-id="${id_film}" class="fa-solid item__icon ${classIcon}"></i>
-                <a href="./product_detail.html?id=${id_film}">
-                    <img src="${src_film}" alt="" class="product-item-pic">
-                </a>
+                <img src="${src_film}" alt="" class="product-item-pic">
                 <div class="product-item-name">
                     <span class="name_film">${name_film}</span>
                     <span class="year_film ">${year_film}</span>
@@ -94,22 +92,23 @@ filmMovie.slice(startId-1,endId-1).forEach(element => {
                     </span>
                 </div>
             </div>
-        </div>`
+        </a>`
 
 })
 
 element__product_item_box.outerHTML = all_product
 
 
-//////////////
+////////////// Thao tác thêm xóa item
 
 const iconActions = document.querySelectorAll(".item__icon")
 
 
 iconActions.forEach((item) =>{
     item.addEventListener('click',(element)=>{
-        const addClass = 'item__icon--add';
-        const isAdd = element.target.classList.contains(addClass);
+        element.preventDefault()
+        const addClass = 'item__icon--add'
+        const isAdd = element.target.classList.contains(addClass)
         if(isAdd){
             loadingItemToStorage(element)
         } else {
@@ -148,13 +147,14 @@ function removeItemFromStorage(element) {
     localStorage.setItem('cart',JSON.stringify(cartItems))
 }
 
-// Xuất item trong local storage ra giỏ hàng
+//////////// Xuất item trong local storage ra giỏ hàng
 renderToCart()
 
 function renderToCart(){
     const itemInCarts = JSON.parse(localStorage.getItem('cart')) || []
     const contentCart = document.querySelector('.content__cart')
     contentCart.innerHTML =  ''
+    // Không có phim trong giỏ hàng
     if(itemInCarts.length === 0) {
         const divNoCart = document.createElement('div')
         divNoCart.classList.add('no-item')
@@ -165,7 +165,7 @@ function renderToCart(){
 
         divNoCart.appendChild(imgNoCart)
         contentCart.appendChild(divNoCart)
-    } else {
+    } else { // Có phim trong giỏ hàng
         itemInCarts.forEach(item => {
             let name_film = item['name']
             let id_film = item['id']
@@ -199,7 +199,7 @@ function renderToCart(){
             remove.classList.add('cart__item-remove', 'fa-solid', 'fa-trash')
             remove.setAttribute('data-id', id_film)
 
-            
+            // Thêm sự kiện click vào nút xóa
             remove.addEventListener('click',  (element) => {
                 element.preventDefault();
                 removeCart(element)
@@ -214,11 +214,13 @@ function renderToCart(){
     }
 }
 
+// Hàm xóa phim từ giỏ hàng và render lại
 function removeCart(element){
     removeItemFromCart(element)
     renderToCart()
 }
 
+//  Hàm xóa item phim từ giỏ hàng
 function removeItemFromCart(element){
     const  item = FILM[element.target.dataset.id - 1]
     let cartItems = JSON.parse(localStorage.getItem('cart')) || []

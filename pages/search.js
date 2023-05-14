@@ -1,9 +1,6 @@
 const params = new URLSearchParams(window.location.search)
 
-// Xuất item tìm kiếm 
-let defaultValue = params.get('search') || ""
-let filmsSearch = searchFilmByName(defaultValue)
-
+// Chức năng tìm kiếm cho thanh điều hướng
 if(window.innerWidth >= 740){
     const input = document.querySelector(".navbar__main-searchbar")
     input.addEventListener("keydown", (evt) => {
@@ -68,12 +65,21 @@ if(window.innerWidth >= 740){
     })
 }
 
+// Hàm tìm kiếm
 function searchFilmByName(name) {
-    const result = FILM.filter(film => film.name.toLowerCase().includes(name.toLowerCase()));
+    const result = FILM.filter(film => {
+        return  film.name.toLowerCase().includes(name.toLowerCase())
+    });
     return result;
   }
 
+// lấy từ khóa từ query string
+const defaultValue = params.get('search') || ""
 
+// Khai báo mảng chứa kết quả tìm kiếm
+const filmsSearch = searchFilmByName(defaultValue)
+
+////// Xuất phim
 // Lấy trang hiện tại từ query params
 const page = params.get('page') || 1
 
@@ -122,6 +128,11 @@ let startId = (page - 1)*numberItem + 1
 let endId = startId + numberItem
 let pageSize = Math.ceil(filmsSearch.length/numberItem)
 
+// Hiển thị từ khóa tìm kiếm trên màn hình
+const searchTitle = document.querySelector(".search__film-title")
+searchTitle.innerHTML = `Danh sách phim tìm kiếm cho từ khóa <em class="search-key">${defaultValue} </em>`
+
+// Xuất phim tìm kiếm ra màn hình
 renderToSearchFilms(filmsSearch)
 
 function renderToSearchFilms(items){
@@ -161,12 +172,10 @@ function renderToSearchFilms(items){
             }
         
             all_product += 
-            `<div class="col ${classCol} product-item-box">
+            `<a href="product_detail.html?id=${id_film}" class="col ${classCol} product-item-box">
                 <div class="product-item">
                     <i data-id="${id_film}" class="fa-solid item__icon ${classIcon}"></i>
-                    <a href="./product_detail.html?id=${id_film}">
-                        <img src="${src_film}" alt="" class="product-item-pic">
-                    </a>
+                    <img src="${src_film}" alt="" class="product-item-pic">
                     <div class="product-item-name">
                         <span class="name_film">${name_film}</span>
                         <span class="year_film ">${year_film}</span>
@@ -181,14 +190,15 @@ function renderToSearchFilms(items){
                         </span>
                     </div>
                 </div>
-            </div>`
+            </a>`
         })
         element__product_item_box.innerHTML = all_product
         
+        // Thêm sự kiện click thêm xóa phim trong giỏ hàng
         const iconActions = document.querySelectorAll(".item__icon")
-
         iconActions.forEach((item) =>{
             item.addEventListener('click',(element)=>{
+                element.preventDefault()
                 const addClass = 'item__icon--add';
                 const isAdd = element.target.classList.contains(addClass);
                 if(isAdd){
@@ -204,6 +214,7 @@ function renderToSearchFilms(items){
 
 ///// Thao tác thêm xóa
 
+// Tải thông tin phim vào Local Storage
 function loadingItemToStorage(element) {
     const  item = FILM[element.target.dataset.id - 1]
     let cartItems = []
@@ -220,6 +231,7 @@ function loadingItemToStorage(element) {
     }
 }
 
+// Xóa phim khỏi Local Storage
 function removeItemFromStorage(element) {
     const  item = FILM[element.target.dataset.id - 1]
     let cartItems = []
@@ -232,13 +244,14 @@ function removeItemFromStorage(element) {
     localStorage.setItem('cart',JSON.stringify(cartItems))
 }
 
-// Xuất item trong local storage ra giỏ hàng
+///// Xuất item trong local storage ra giỏ hàng
 renderToCart()
 
 function renderToCart(){
     const itemInCarts = JSON.parse(localStorage.getItem('cart')) || []
     const contentCart = document.querySelector('.content__cart')
     contentCart.innerHTML =  ''
+    // Nếu như không có phim trong giỏ hàng
     if(itemInCarts.length === 0) {
         const divNoCart = document.createElement('div')
         divNoCart.classList.add('no-item')
@@ -249,7 +262,7 @@ function renderToCart(){
 
         divNoCart.appendChild(imgNoCart)
         contentCart.appendChild(divNoCart)
-    } else {
+    } else { // Có phim trong giỏ hàng
         itemInCarts.forEach(item => {
             let name_film = item['name']
             let id_film = item['id']
@@ -283,7 +296,7 @@ function renderToCart(){
             remove.classList.add('cart__item-remove', 'fa-solid', 'fa-trash')
             remove.setAttribute('data-id', id_film)
 
-            
+            // Thêm sự kiện click vào nút xóa trong giỏ hàng
             remove.addEventListener('click',  (element) => {
                 element.preventDefault();
                 removeCart(element)
@@ -298,11 +311,13 @@ function renderToCart(){
     }
 }
 
+// Hàm xóa phim từ giỏ hàng và render lại
 function removeCart(element){
     removeItemFromCart(element)
     renderToCart()
 }
 
+// Hàm xóa item phim từ giỏ hàng
 function removeItemFromCart(element){
     const  item = FILM[element.target.dataset.id - 1]
     let cartItems = JSON.parse(localStorage.getItem('cart')) || []

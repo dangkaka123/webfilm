@@ -16,7 +16,7 @@
 
 
 .page_device_box_pre,.page_device_box_next,.page_device_box_item{
-    font-size: 1.1em;
+    font-size: 18px;
     min-width: 50px;
     display: block;
     border: 1px solid var(--black-color);
@@ -41,7 +41,7 @@
 }
 
 .current_page{
-    color: white !important;
+    font-weight: 600;
     cursor: default !important;
     background-color: var(--primary-color) !important;
     opacity: 1 !important;

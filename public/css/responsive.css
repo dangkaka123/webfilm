@@ -78,6 +78,7 @@
     }
 
     #video_iframe{
+        scroll-margin-top: 120px;
         width: 90vw;
         height: 45vh;
     }
@@ -232,6 +233,11 @@
     .no-product{
         font-size: 20px;
     }
+
+    /* Search film */
+    .search__film-title{
+        font-size: 20px;
+    }
 }
 
 
@@ -251,6 +257,11 @@
     .info--title{
         width: 20%;
     }
+
+    /* Search film */
+    .search__film-title{
+        font-size: 25px;
+    }
 }
 
 
@@ -263,10 +274,3 @@
     }
 }
 
-/* 
-    PC medium resolution
-*/
-
-@media (min-width: 1024px) and (max-width: 1239px) {
-
-}

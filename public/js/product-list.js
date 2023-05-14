@@ -29,7 +29,7 @@ window.addEventListener('resize',  () => {
 // Các cột, hàng và class sẽ thay đổi theo kích thước màn hình
 if(window.innerWidth < 740){
     pageCol = 2
-    pageRow = 5
+    pageRow = 3
     classCol = 'c-'+ (12/pageCol).toString().replace(".", "-")
 } else if(window.innerWidth >= 740 && window.innerWidth  < 1024){
     pageCol = 3
@@ -41,7 +41,7 @@ if(window.innerWidth < 740){
     classCol = 'l-'+ (12/pageCol).toString().replace(".", "-")
 }
 
-// Tính số lượng item sẽ xuất hiện tại product list
+// Khai báo câc biến tính số lượng item sẽ xuất hiện tại product list
 const numberItem = pageCol*pageRow
 const pageSize = Math.ceil(FILM.length/numberItem) 
 let startId = (page - 1)*numberItem + 1
@@ -49,7 +49,8 @@ let endId = startId + numberItem
 const element__product_item_box = document.querySelector('.product-item-box')
 
 const itemInStorage = JSON.parse(localStorage.getItem('cart')) || []
-// Hiển thị item ra màn hình
+
+// Hiển thị phim ra màn hình
 let all_product = ''
 FILM.slice(startId-1,endId-1).forEach(element => {
     let name_film = element['name']
@@ -72,12 +73,10 @@ FILM.slice(startId-1,endId-1).forEach(element => {
     }
 
     all_product += 
-    `<div class="col ${classCol} product-item-box">
+    `<a href="pages/product_detail.html?id=${id_film}" class="col ${classCol} product-item-box">
         <div class="product-item">
             <i data-id="${id_film}" class="fa-solid item__icon ${classIcon}"></i>
-            <a href="pages/product_detail.html?id=${id_film}">
-                <img src="${src_film}" alt="" class="product-item-pic">
-            </a>
+            <img src="${src_film}" alt="" class="product-item-pic">
             <div class="product-item-name">
                 <span class="name_film">${name_film}</span>
                 <span class="year_film ">${year_film}</span>
@@ -92,7 +91,7 @@ FILM.slice(startId-1,endId-1).forEach(element => {
                 </span>
             </div>
         </div>
-    </div>`
+    </a>`
 })
 
 element__product_item_box.outerHTML = all_product
@@ -106,6 +105,7 @@ const iconActions = document.querySelectorAll(".item__icon")
 // Xử lý khi nhấn vào nút
 iconActions.forEach((item) =>{
     item.addEventListener('click',(element)=>{
+        element.preventDefault()
         const addClass = 'item__icon--add';
         const isAdd = element.target.classList.contains(addClass);
         if(isAdd){
